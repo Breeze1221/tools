@@ -1,0 +1,422 @@
+{
+  "siteName": "Breeze的工具箱",
+  "searchPlaceholder": "搜索工具…",
+  "noResults": "未找到匹配的工具",
+  "clearSearch": "清除搜索",
+  "closePalette": "关闭命令面板",
+  "select": {
+    "placeholder": "请选择",
+    "searchPlaceholder": "搜索选项…",
+    "searchAria": "搜索{{label}}",
+    "clearSearch": "清除搜索",
+    "optionCount": "{{total}} 个选项",
+    "noResults": "无匹配项",
+    "noMatch": "没有匹配「{{query}}」的选项"
+  },
+  "jsonViewer": {
+    "treeAria": "JSON 结构",
+    "searchAria": "在 JSON 中搜索",
+    "searchPlaceholder": "搜索键名与值",
+    "noMatch": "无匹配",
+    "prevMatch": "上一个匹配",
+    "nextMatch": "下一个匹配",
+    "expandAll": "全部展开",
+    "collapseAll": "全部折叠",
+    "copyValue": "复制值",
+    "copyPath": "复制路径",
+    "copied": "已复制",
+    "copyFailed": "复制失败",
+    "copiedValue": "已复制 {{path}} 的值",
+    "copiedPath": "已复制路径 {{path}}",
+    "items_one": "{{count}} 项",
+    "items_other": "{{count}} 项",
+    "keys_one": "{{count}} 个键",
+    "keys_other": "{{count}} 个键",
+    "showMore_one": "再显示 {{count}} 项",
+    "showMore_other": "再显示 {{count}} 项",
+    "hiddenCount_one": "还有 {{count}} 项未显示",
+    "hiddenCount_other": "还有 {{count}} 项未显示",
+    "moreAria": "再显示 {{count}} 项，还有 {{hidden}} 项未显示",
+    "page": "分页"
+  },
+  "copied": "已复制到剪贴板",
+  "fileDrop": {
+    "label": "添加文件",
+    "description": "把文件拖到这里，或点击从本机选择",
+    "dropLabel": "松手即可添加",
+    "browse": "选择文件",
+    "browseFolder": "选择文件夹",
+    "pasteHint": "也可以直接粘贴",
+    "maxFiles_one": "最多 {{count}} 个文件",
+    "maxFiles_other": "最多 {{count}} 个文件",
+    "listLabel": "已选文件",
+    "remove": "移除 {{name}}",
+    "retry": "重试 {{name}}",
+    "status": {
+      "processing": "处理中",
+      "ready": "就绪",
+      "error": "处理失败"
+    },
+    "errors": {
+      "unsupportedOne": "{{name}} 不是支持的文件类型。",
+      "unsupportedMany_one": "有 {{count}} 个文件类型不支持，已跳过。",
+      "unsupportedMany_other": "有 {{count}} 个文件类型不支持，已跳过。",
+      "tooLarge": "有文件超过 {{max}}，已跳过。",
+      "tooMany_one": "最多只能添加 {{count}} 个，超出的已跳过。",
+      "tooMany_other": "最多只能添加 {{count}} 个，超出的已跳过。"
+    },
+    "announcement": {
+      "added_one": "已添加 {{count}} 个文件",
+      "added_other": "已添加 {{count}} 个文件",
+      "removed": "{{name}} 已移除",
+      "retrying": "正在重试 {{name}}"
+    }
+  },
+  "copyFailed": "复制失败，请手动复制",
+  "copy": "复制",
+  "paste": "粘贴",
+  "pasteFailed": "无法读取剪贴板，请手动粘贴",
+  "input": "输入",
+  "output": "输出",
+  "error": "处理出错",
+  "loading": "加载中…",
+  "generate": "生成",
+  "generateCount": "生成数量",
+  "clear": "清空",
+  "reset": "重置",
+  "datePicker": {
+    "rangeLabel": "日期区间",
+    "singleLabel": "日期",
+    "placeholder": "选择日期",
+    "noDates": "未选择日期",
+    "dayCount_one": "{{count}} 天",
+    "dayCount_other": "{{count}} 天",
+    "pickEnd": "请选择结束日期",
+    "pickEndStatus": "起点为 {{start}}，请选择结束日期。",
+    "clear": "清除",
+    "cancel": "取消",
+    "apply": "确定",
+    "time": "时间",
+    "presetsGroup": "快捷区间",
+    "prevMonth": "上个月",
+    "nextMonth": "下个月",
+    "prevYear": "上一年",
+    "nextYear": "下一年",
+    "presets": {
+      "today": "今天",
+      "yesterday": "昨天",
+      "last7": "近 7 天",
+      "last30": "近 30 天",
+      "thisMonth": "本月",
+      "lastMonth": "上月",
+      "thisQuarter": "本季度",
+      "ytd": "今年至今"
+    }
+  },
+  "fullscreen": "全屏",
+  "resizePanes": "拖动调整左右分栏宽度",
+  "caretPosition": "行 {{line}} · 列 {{column}}",
+  "charsAndLines": "{{chars}} 字符 · {{lines}} 行",
+  "inputFormat": "输入格式",
+  "outputFormat": "输出格式",
+  "formats": {
+    "json": "JSON",
+    "json-min": "JSON 压缩",
+    "yaml": "YAML",
+    "toml": "TOML",
+    "xml": "XML",
+    "csv": "CSV",
+    "markdown": "Markdown",
+    "html": "HTML",
+    "sql": "SQL"
+  },
+  "theme": "主题",
+  "themeLight": "浅色",
+  "themeDark": "深色",
+  "themeSystem": "跟随系统",
+  "themeCycle": "主题：{{current}}，点按切到{{next}}",
+  "language": "语言",
+  "localeCycle": "语言：{{current}}，点按切到 {{next}}",
+  "favorites": "收藏夹",
+  "favoritesEmpty": "暂无收藏，点击工具页右上角的星标添加",
+  "favoriteAdd": "添加到收藏",
+  "favoriteRemove": "取消收藏",
+  "copyLink": "复制页面链接",
+  "recent": "最近使用",
+  "clearRecent": "清空最近使用",
+  "randomTool": "随机打开一个工具",
+  "toggleTheme": "切换深色模式",
+  "blog": "博客",
+  "github": "GitHub 仓库",
+  "about": "关于",
+  "actions": "快捷操作",
+  "breadcrumbHome": "工具集",
+  "openMenu": "打开导航菜单",
+  "backHome": "返回首页",
+  "dock": {
+    "home": "主页",
+    "categories": "工具分类",
+    "tools": "{{category}} 的工具",
+    "menu": "菜单",
+    "settings": "快捷入口",
+    "brightness": "亮度",
+    "expand": "展开导航",
+    "collapse": "收起导航",
+    "back": "返回分类",
+    "more": "更多"
+  },
+  "beian": {
+    "policeAlt": "公安备案标识"
+  },
+  "footer": {
+    "ariaLabel": "站点页脚",
+    "tagline": "把日常要用的编码、转换、速查和图片处理收在一处，打开就能用。",
+    "popular": "常用工具",
+    "about": "关于本站",
+    "home": "首页",
+    "copyright": "© {{year}} {{site}}",
+    "toolCount": "共 {{total}} 个工具",
+    "faq": {
+      "title": "常见问题",
+      "more": "查看全部问题",
+      "q-account": "工具要注册或者付费吗？",
+      "a-account": "都不用。打开页面就能用，没有账号、没有会员，也没有次数限制。",
+      "q-privacy": "我贴进来的数据会被上传吗？",
+      "a-privacy": "不会。文本、图片、密钥全部在你本机处理，本站不发任何请求；只有你自己在设置里填过的 AI 服务商例外，那部分数据直连你配置的服务商。",
+      "q-mobile": "手机上能用吗？",
+      "a-mobile": "能。手机、平板、PC 三档断点各自适配，收藏和最近使用记在本机，换设备不会带走。",
+      "q-contribute": "想加个工具，或者发现了 bug？",
+      "a-contribute": "在 GitHub 仓库提 Issue，或者照着仓库里的开发规范自己加一个——全站 MIT 开源。"
+    }
+  },
+  "crashTitle": "页面出错了",
+  "crashDescription": "应用遇到了意外错误。你的数据都存在本机，没有丢失；重新加载通常就能恢复。",
+  "reload": "重新加载",
+  "lightbox": {
+    "title": "灯箱查看",
+    "zoomIn": "放大",
+    "zoomOut": "缩小",
+    "fit": "适应窗口",
+    "close": "关闭",
+    "hint": "滚轮缩放 · 拖动平移 · 双击放大 · 点击画面外关闭"
+  },
+  "imageCompare": {
+    "label": "前后对比分割线",
+    "valueText": "对比进度 {{percent}}%",
+    "orientation": "切换分割线方向",
+    "hint": "拖动分割线，或聚焦后用方向键微调"
+  },
+  "colorPicker": {
+    "defaultLabel": "颜色",
+    "dialogSuffix": "取色面板",
+    "pickFromScreen": "从屏幕取色",
+    "done": "完成",
+    "areaRoledescription": "二维滑杆",
+    "saturationBrightness": "饱和度与明度",
+    "saturationBrightnessValue": "饱和度 {{s}}%，明度 {{v}}%",
+    "hue": "色相",
+    "opacity": "不透明度",
+    "formatAria": "当前格式 {{format}}，点击切换格式",
+    "valueAria": "{{label}}的{{format}}值",
+    "invalid": "请输入 hex、rgb、hsl 或 oklch 颜色",
+    "against": "相对底色",
+    "level": {
+      "aaa": "AAA",
+      "aa": "AA",
+      "aaLarge": "大号 AA",
+      "fail": "不达标"
+    },
+    "contrastAria": "对比度 {{ratio}}:1，{{level}}",
+    "saveSwatch": "收藏 {{color}}",
+    "savedColors": "已收藏的颜色",
+    "swatchAria": "{{color}}，Alt + 方向键移动，Delete 删除",
+    "noSwatches": "点 + 收藏当前色"
+  },
+  "ai": {
+    "entry": "AI 辅助",
+    "entryHint": "关闭时润色与校对入口隐藏、导入 PDF 置灰；开启后内容直连你在此配置的服务商。",
+    "direct": {
+      "reachable": "通常可浏览器直连",
+      "blocked": "通常需自备可跨域地址",
+      "unknown": "直连可用性未验证"
+    },
+    "config": {
+      "entry": "AI 服务商",
+      "title": "AI 服务商设置",
+      "pickTitle": "模型厂商",
+      "pickHint": "可分别配置多家，点选即在右侧编辑",
+      "ready": "已配置",
+      "incomplete": "待完善配置",
+      "notice": "Key 只保存在这台浏览器的本地存储里，请求由浏览器直接发往你填写的地址，本站不经手、不留存。",
+      "connected": "已配置 {{count}}/{{total}} 家",
+      "getKey": "获取密钥",
+      "keyPlaceholder": "粘贴该服务商的 API Key",
+      "keyPublicHint": "密钥明文保存在这台浏览器的本地存储里。别在网吧、打印店等公共电脑上填写；用过了记得点「清除全部密钥」删掉。",
+      "showKey": "显示密钥",
+      "hideKey": "隐藏密钥",
+      "baseUrl": "服务地址（Base URL）",
+      "baseUrlHint": "可改成自建或中转地址；仅支持 https（本机回环地址可用 http），填错会导致请求发不出去。",
+      "models": "模型",
+      "textModel": "文本模型（润色与校对）",
+      "pdfModel": "视觉模型（PDF 导入）",
+      "imageModel": "出图模型（AI 生图画布）",
+      "visionModel": "识图模型（反推提示词）",
+      "modelPlaceholder": "手输模型名，例如 deepseek-chat",
+      "textHint": "每家各记一个文本、视觉、出图与识图型号，互不覆盖；实际生效的是顶部「使用厂商」选中的那家。视觉槽供导入 PDF 使用，识图槽供生图工具反推提示词使用，出图槽仅 OpenAI / Gemini 生效。",
+      "fetchModels": "获取模型列表",
+      "directBlocked": "这家未开放跨域（CORS）：浏览器发出的请求会被拦下，「获取模型列表」和后续调用都会失败，需换成支持跨域的中转地址。",
+      "fetchOk": "已获取 {{count}} 个模型",
+      "fetchEmpty": "这个地址没有返回模型列表，改用「手动输入模型名」直接填。",
+      "unassigned": "未选择",
+      "manual": "手动输入模型名…",
+      "fromList": "从列表选择",
+      "listEmpty": "先点右上角「获取模型列表」把该凭证下的模型拉进来；地址不支持这个接口时，用「手动输入模型名」直接填。",
+      "useProvider": "使用厂商",
+      "active": "使用中",
+      "clearAll": "清除全部密钥"
+    },
+    "test": {
+      "button": "检测连接",
+      "ok": "连接正常",
+      "mismatch": "返回内容与预期不一致",
+      "canvasUnavailable": "当前浏览器不支持画布，无法做视觉自检"
+    },
+    "consent": {
+      "title": "开启 AI 辅助？",
+      "body": "开启后，润色、校对与 PDF 导入会把你的简历内容直接发送给你配置的服务商（不会经过本站服务器）。简历正文属于个人信息，请确认你接受这一点。",
+      "accept": "我已了解，开启"
+    },
+    "clear": {
+      "title": "清除本机全部 API Key？",
+      "body": "会抹掉这台浏览器里保存的所有服务商密钥，服务地址与已选模型保留不动。此操作无法撤销，需要时请重新粘贴密钥。",
+      "action": "清除密钥",
+      "done": "已清除本机全部 API Key。"
+    },
+    "errors": {
+      "invalidProvider": "不支持的服务商，请检查配置。",
+      "configRequired": "缺少 API Key 或模型名。",
+      "invalidEndpoint": "服务地址不合法。",
+      "corsBlocked": "请求没能发出：该地址可能不允许浏览器直连，或本机无法访问。可改用支持跨域的中转地址。",
+      "networkError": "网络请求失败。",
+      "timeout": "请求超时（120 秒）。",
+      "aborted": "已取消。",
+      "authenticationFailed": "API Key 无效或已过期。",
+      "modelAccessDenied": "当前 Key 没有该模型的访问权限。",
+      "rateLimited": "请求过于频繁，稍后再试。",
+      "requestTooLarge": "内容超出请求体上限。",
+      "modelOrEndpointError": "模型名或接口地址不存在。",
+      "upstreamError": "服务商返回错误。",
+      "truncatedOutput": "模型输出被长度截断，请缩短内容后重试。",
+      "refused": "模型拒绝处理这段内容。",
+      "emptyOutput": "模型没有返回任何内容。",
+      "invalidOutput": "模型返回的内容无法解析，请重试。",
+      "renderFailed": "页面渲染失败。",
+      "pdfUnreadable": "无法读取这个 PDF 文件。",
+      "tooManyPages": "最多支持 10 页。",
+      "fileTooLarge": "文件超过 20MB。",
+      "encryptedPdf": "PDF 已加密，无法导入。",
+      "unknown": "发生未知错误。"
+    }
+  },
+  "tour": {
+    "intro": "页面介绍",
+    "welcome": "今天想看些什么？我可以带你逛逛～",
+    "ai": "AI 助手（开发中）",
+    "progress": "第 {{n}} / {{total}} 处",
+    "next": "下一步",
+    "done": "结束介绍",
+    "fastSpeed": "加速说话",
+    "normalSpeed": "恢复正常语速",
+    "replay": "重播本句",
+    "steps": {
+      "dock": {
+        "body": "这里是导航。点一个分类会浮出该类的工具，再点同一个分类收起；嫌它占地方可以贴到左边缘折起来。"
+      },
+      "search": {
+        "body": "在这里搜全站工具，中文名、英文名和关键词都能匹配。顶栏那枚搜索胶囊是同一个入口，带快捷键提示。"
+      },
+      "topNav": {
+        "body": "顶部这几枚胶囊是搜索、语言切换和主题切换，右边还有博客、GitHub 与关于页的入口。"
+      },
+      "circuit": {
+        "body": "中间这块电路板就是全部工具：每枚芯片是一个分类，点亮芯片上的分类标签会展开那一类的工具列表。"
+      }
+    }
+  },
+  "empty": {
+    "art": {
+      "search": {
+        "idle": "放大镜压在三个空白结果行上",
+        "loading": "放大镜压在三个空白结果行上",
+        "done": "带搜索框与两条结果的结果列表"
+      },
+      "offline": {
+        "idle": "一朵云与一台设备之间被一道断开的线连着",
+        "loading": "断开的线正往云的方向接回去",
+        "done": "一朵云与一台设备由一条完整的线连着，设备上有个勾"
+      },
+      "inbox": {
+        "idle": "一叠托盘，右上角带一个勾",
+        "loading": "正在核对的叠放托盘",
+        "done": "一叠托盘，右上角带一个勾"
+      },
+      "map": {
+        "idle": "一张折叠地图，虚线路径断在一个叉上",
+        "loading": "正在重新查找路径的折叠地图",
+        "done": "一张折叠地图，虚线路径终点是打了勾的目的地"
+      }
+    },
+    "search": {
+      "idle": {
+        "title": "没有匹配的工具",
+        "line": "换个关键词试试，或清空搜索看全部工具。",
+        "action": "清空搜索"
+      },
+      "loading": "",
+      "done": {
+        "title": "已清空搜索",
+        "line": "现在列出全部工具。",
+        "action": "重新输入"
+      }
+    },
+    "offline": {
+      "idle": {
+        "title": "现在连不上",
+        "line": "这一步要走网络，本机当前没有可用连接。",
+        "action": "再试一次"
+      },
+      "loading": "正在重连…",
+      "done": {
+        "title": "已经连上",
+        "line": "结果刚刚刷新过。",
+        "action": "断回离线"
+      }
+    },
+    "inbox": {
+      "idle": {
+        "title": "这里全部处理完",
+        "line": "没有待办的条目了，新增的会第一个出现在这里。",
+        "action": "重新核对"
+      },
+      "loading": "正在核对…",
+      "done": {
+        "title": "还是全部处理完",
+        "line": "刚刚核对过，没有新的条目。",
+        "action": "再核对一次"
+      }
+    },
+    "map": {
+      "idle": {
+        "title": "页面找不到",
+        "line": "这个地址不在站点的路由表里，也不会自动跳去别处。",
+        "action": "搜索工具"
+      },
+      "loading": "正在查找…",
+      "done": {
+        "title": "找到了入口",
+        "line": "从首页的分类网格可以继续。",
+        "action": "回首页"
+      }
+    }
+  }
+}

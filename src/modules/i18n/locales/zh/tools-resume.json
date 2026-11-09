@@ -1,0 +1,736 @@
+{
+  "resume": {
+    "title": "简历工坊",
+    "description": "可视化编辑简历，9 套模板、实时 A4 预览与本地导出；可选 AI 润色与校对，直连你配置的服务商",
+    "templates": {
+      "hint": "选一个模板开始，进入编辑器后仍可随时切换",
+      "list": {
+        "classic": {
+          "name": "经典模板",
+          "description": "传统简约的简历布局，适合大多数求职场景"
+        },
+        "modern": {
+          "name": "两栏布局",
+          "description": "经典两栏，突出个人特色"
+        },
+        "left-right": {
+          "name": "模块标题背景色",
+          "description": "模块标题背景鲜明，突出美观特色"
+        },
+        "timeline": {
+          "name": "时间线风格",
+          "description": "时间线布局，突出经历的时间顺序"
+        },
+        "minimalist": {
+          "name": "极简模板",
+          "description": "大面积留白，干净纯粹的排版风格"
+        },
+        "elegant": {
+          "name": "优雅模板",
+          "description": "居中标题单列设计，具有高级感的分隔线"
+        },
+        "creative": {
+          "name": "创意模板",
+          "description": "视觉错落设计，灵动活泼展现个性"
+        },
+        "editorial": {
+          "name": "Editorial",
+          "description": "高端画报风模板，衬线体与无衬线体混排，附带侧边时光轴"
+        },
+        "swiss": {
+          "name": "瑞士美学",
+          "description": "包豪斯国际排版，超粗字重对比与几何色块点缀"
+        }
+      },
+      "switch": "切换模板"
+    },
+    "mine": {
+      "heading": "我的简历",
+      "count": "共 {{n}} 份",
+      "new": "新建简历",
+      "newBlank": "空白简历",
+      "newDescription": "创建一个新简历以开始。",
+      "import": "导入 JSON",
+      "importOk": "已导入《{{title}}》",
+      "importFailed": "文件不是有效的简历 JSON",
+      "importTooLarge": "文件超过 10 MB，不像是一份简历，已拒绝导入。",
+      "open": "继续编辑",
+      "edit": "编辑",
+      "meta": "{{template}} · {{time}}",
+      "duplicate": "复制",
+      "rename": "重命名",
+      "renamePrompt": "简历名称",
+      "delete": "删除",
+      "duplicated": "已复制为《{{title}}》",
+      "deleted": "已删除《{{title}}》",
+      "legacyImported": "已从旧版工具导入 {{n}} 份简历"
+    },
+    "create": {
+      "blankHeading": "从空白开始",
+      "blankDescription": "从内置默认模板创建，空白开始",
+      "now": "立即创建",
+      "templateHeading": "从模板开始"
+    },
+    "confirm": {
+      "deleteTitle": "删除这份简历？",
+      "deleteDescription": "《{{title}}》将被永久删除，此操作无法撤销。",
+      "confirm": "删除",
+      "cancel": "取消"
+    },
+    "basicPanel": {
+      "basicFields": {
+        "name": "姓名",
+        "title": "职位",
+        "employementStatus": "状态",
+        "birthDate": "生日",
+        "email": "邮箱",
+        "phone": "电话",
+        "location": "所在地"
+      },
+      "layout": "布局",
+      "basicField": "基础字段",
+      "customField": "自定义字段",
+      "displayLabel": "显示标签",
+      "addCustomField": "添加自定义字段",
+      "deleteField": "删除字段",
+      "customLabelPlaceholder": "标签",
+      "customValuePlaceholder": "内容",
+      "align": {
+        "left": "左对齐",
+        "center": "居中",
+        "right": "右对齐"
+      }
+    },
+    "increase": "增加",
+    "decrease": "减少",
+    "layout": {
+      "drag": "拖动排序",
+      "show": "在简历中显示",
+      "hide": "在简历中隐藏",
+      "delete": "删除章节",
+      "deleteTitle": "删除「{{title}}」？",
+      "deleteDescription": "该章节及其内容会从简历中移除。"
+    },
+    "sidePanel": {
+      "layout": {
+        "title": "章节布局",
+        "addSection": "添加章节",
+        "addCustomSectionOption": "空白自定义章节",
+        "customSectionTitle": "自定义模块",
+        "standardSections": {
+          "skills": "专业技能",
+          "experience": "工作经历",
+          "projects": "项目经历",
+          "education": "教育经历",
+          "selfEvaluation": "自我评价",
+          "certificates": "证书附图"
+        }
+      },
+      "theme": {
+        "title": "主题色",
+        "custom": "自定义"
+      },
+      "typography": {
+        "title": "排版",
+        "font": {
+          "title": "字体",
+          "note": "字体文件随站点本地提供，导出时按所选字体渲染",
+          "family": {
+            "alibaba": "阿里巴巴普惠体",
+            "misans": "小米无界",
+            "noto": "思源黑体",
+            "serif": "思源宋体"
+          }
+        },
+        "lineHeight": {
+          "title": "行高"
+        },
+        "baseFontSize": {
+          "title": "正文字号"
+        },
+        "headerSize": {
+          "title": "章节标题字号"
+        },
+        "subheaderSize": {
+          "title": "小标题字号"
+        }
+      },
+      "spacing": {
+        "title": "间距",
+        "pagePadding": {
+          "title": "页边距"
+        },
+        "sectionSpacing": {
+          "title": "章节间距"
+        },
+        "paragraphSpacing": {
+          "title": "段间距"
+        }
+      },
+      "mode": {
+        "title": "显示模式",
+        "useIconMode": {
+          "title": "联系方式用图标",
+          "hint": "关闭后改为显示文字标签"
+        },
+        "centerSubtitle": {
+          "title": "副标题居中",
+          "hint": "职位与联系方式跟随标题居中"
+        },
+        "flexibleHeaderLayout": {
+          "title": "弹性表头",
+          "hint": "小标题紧随主标题排布，不换行占位"
+        }
+      }
+    },
+    "export": {
+      "pdf": "导出 PDF",
+      "done": "已生成 PDF",
+      "failed": "导出失败，请查看控制台",
+      "title": "导出简历",
+      "description": "全部在本地完成，不会上传任何数据",
+      "tooltip": "导出",
+      "footnote": "长图导出会把简历渲染为图片，文字不可选中；需要可复制文字请用浏览器打印。",
+      "tiles": {
+        "pdf": "长图 PDF",
+        "image": "长图 PNG",
+        "print": "浏览器打印",
+        "json": "简历数据",
+        "markdown": "Markdown",
+        "pdfHint": "整页一张长图",
+        "imageHint": "适合插入文档",
+        "printHint": "文字可选中、可存 PDF",
+        "jsonHint": "用于备份与再次导入",
+        "markdownHint": "纯文本版本",
+        "pagedPdf": "导出 PDF",
+        "pagedPdfHint": "按 A4 逐页切分"
+      }
+    },
+    "preview": {
+      "pageEnds": "第 {{page}} 页结束",
+      "autoOnePageCannotFit": "内容过多，已缩到最小仍无法放进一页",
+      "zoomIn": "放大预览",
+      "zoomOut": "缩小预览",
+      "zoomInput": "预览缩放比例"
+    },
+    "editor": {
+      "back": "返回简历列表",
+      "undo": "撤销",
+      "redo": "重做",
+      "panelContent": "内容编辑",
+      "unknownSection": "未支持的章节",
+      "rename": "重命名简历",
+      "untitled": "未命名简历"
+    },
+    "present": "至今",
+    "section": {
+      "rename": "重命名章节",
+      "addItem": "添加一条"
+    },
+    "item": {
+      "untitled": "未命名条目",
+      "delete": "删除条目",
+      "deleteTitle": "删除这个条目？",
+      "deleteDescription": "该条目会从简历中移除，可用撤销恢复。"
+    },
+    "richEditor": {
+      "bold": "加粗",
+      "italic": "斜体",
+      "underline": "下划线",
+      "strike": "删除线",
+      "bulletList": "无序列表",
+      "orderedList": "有序列表",
+      "alignLeft": "左对齐",
+      "alignCenter": "居中",
+      "alignRight": "右对齐",
+      "alignJustify": "两端对齐",
+      "textColor": "文字颜色",
+      "resetColor": "恢复默认颜色",
+      "highlight": "高亮",
+      "link": "插入链接",
+      "linkPlaceholder": "链接地址",
+      "apply": "应用",
+      "remove": "移除",
+      "undo": "撤销",
+      "redo": "重做"
+    },
+    "experience": {
+      "add": "添加一段工作经历",
+      "empty": "还没有工作经历",
+      "company": "公司",
+      "position": "职位",
+      "date": "起止时间",
+      "details": "工作描述",
+      "detailsPlaceholder": "用一行一条列出你的职责与产出"
+    },
+    "education": {
+      "add": "添加一段教育经历",
+      "empty": "还没有教育经历",
+      "school": "学校",
+      "major": "专业",
+      "degree": "学位",
+      "date": "起止时间",
+      "description": "描述"
+    },
+    "projects": {
+      "add": "添加一个项目",
+      "empty": "还没有项目",
+      "name": "项目名称",
+      "role": "担任角色",
+      "date": "起止时间",
+      "description": "项目描述",
+      "link": "项目链接",
+      "linkLabel": "链接显示文字"
+    },
+    "custom": {
+      "add": "添加一条",
+      "empty": "还没有内容",
+      "title": "标题",
+      "subtitle": "副标题",
+      "date": "起止时间",
+      "description": "描述"
+    },
+    "skills": {
+      "placeholder": "列出你的专业技能"
+    },
+    "selfEvaluation": {
+      "placeholder": "一段简要的自我评价"
+    },
+    "iconSelector": {
+      "title": "选择图标",
+      "all": "全部",
+      "searchPlaceholder": "搜索图标",
+      "empty": "没有匹配的图标",
+      "categories": {
+        "personal": "个人信息",
+        "education": "教育背景",
+        "work": "工作经历",
+        "skills": "技能",
+        "languages": "语言",
+        "projects": "项目",
+        "achievements": "成就荣誉",
+        "hobbies": "兴趣爱好",
+        "social": "社交媒体",
+        "others": "其他"
+      },
+      "icons": {
+        "User": "用户",
+        "Mail": "邮箱",
+        "Phone": "电话",
+        "MapPin": "位置",
+        "Globe": "网站",
+        "Smartphone": "手机",
+        "AtSign": "社交账号",
+        "Contact": "名片",
+        "GraduationCap": "学历",
+        "School": "学校",
+        "Book": "书籍",
+        "BookOpen": "阅读",
+        "Library": "图书馆",
+        "Award": "证书",
+        "Briefcase": "工作",
+        "Landmark": "机构",
+        "Building": "公司",
+        "CalendarRange": "时间段",
+        "Clock": "时间",
+        "Code": "代码",
+        "Cpu": "硬件",
+        "Database": "数据库",
+        "Terminal": "命令行",
+        "Layers": "分层",
+        "Languages": "语言",
+        "MessageSquare": "消息",
+        "MessagesSquare": "对话",
+        "FolderGit2": "仓库",
+        "GitBranch": "分支",
+        "Rocket": "项目启动",
+        "Target": "目标",
+        "Trophy": "奖杯",
+        "Medal": "奖牌",
+        "Star": "星标",
+        "Heart": "热爱",
+        "Music": "音乐",
+        "Palette": "设计",
+        "Camera": "摄影",
+        "Gamepad2": "游戏",
+        "Plane": "旅行",
+        "Coffee": "咖啡",
+        "Dumbbell": "健身",
+        "Rss": "订阅",
+        "Share2": "分享",
+        "MessageCircle": "聊天",
+        "Newspaper": "资讯",
+        "Hash": "话题",
+        "FileText": "文档",
+        "FileCheck": "审核",
+        "Funnel": "筛选",
+        "Link": "链接",
+        "Wallet": "薪资",
+        "Lightbulb": "想法",
+        "Send": "投递",
+        "Settings": "设置",
+        "Search": "搜索",
+        "Flag": "标记",
+        "Bookmark": "收藏",
+        "ThumbsUp": "好评",
+        "Zap": "效率"
+      }
+    },
+    "photoConfig": {
+      "title": "头像设置",
+      "upload": "选择图片",
+      "showInResume": "在简历中显示",
+      "dragHint": "点击、拖拽或粘贴图片到此处",
+      "cropHint": "拖动选区移动，拖手柄缩放，选区不会超出图片",
+      "cropExternalHint": "外部链接的图片拿不到像素，无法导出裁剪结果，将按原图使用",
+      "localImage": "本地图片",
+      "rotateLeft": "向左旋转",
+      "rotateRight": "向右旋转",
+      "zoomIn": "放大",
+      "zoomOut": "缩小",
+      "remove": "移除头像",
+      "urlTitle": "图片链接",
+      "urlPlaceholder": "https://…",
+      "urlApply": "使用该链接",
+      "aspectRatio": "比例",
+      "ratios": {
+        "custom": "自定义"
+      },
+      "borderRadius": "圆角",
+      "borderRadiusOptions": {
+        "none": "直角",
+        "medium": "圆角",
+        "full": "圆形",
+        "custom": "自定义"
+      },
+      "done": "完成",
+      "typeLimit": "只能选择图片文件",
+      "compressFailed": "图片处理失败，请换一张"
+    },
+    "certificates": {
+      "empty": "还没有证书图片，点击上传或粘贴到此处",
+      "add": "添加证书",
+      "width": "宽度",
+      "remove": "删除",
+      "item": "证书 {{index}}",
+      "compressFailed": "图片处理失败，已跳过"
+    },
+    "dock": {
+      "sections": "章节布局",
+      "theme": "主题色",
+      "typography": "排版",
+      "spacing": "间距",
+      "mode": "显示模式",
+      "switchTemplate": "切换模板",
+      "autoOnePage": "自动一页纸",
+      "autoOnePageOn": "已开启自动一页纸",
+      "autoOnePageOff": "已关闭自动一页纸",
+      "pageBreakLines": "分页参考线",
+      "pageBreakShown": "已显示分页参考线",
+      "pageBreakHidden": "已隐藏分页参考线",
+      "export": "导出",
+      "copy": "复制简历",
+      "copied": "已复制简历",
+      "home": "返回简历列表",
+      "grammar": "AI 语法检查",
+      "grammarResults": "查看 {{count}} 处校对结果"
+    },
+    "sync": {
+      "title": "本地备份",
+      "description": "把简历写到你选择的本地文件夹，浏览器直接读写，不经过任何服务器。",
+      "pending": "保存中",
+      "backedUp": "已备份 {{time}}",
+      "none": "未备份",
+      "unsupported": "当前浏览器不支持文件夹访问（需要 Chrome / Edge），简历仍会保存在浏览器本地。",
+      "noDirectory": "尚未选择文件夹",
+      "choose": "选择文件夹",
+      "change": "更换文件夹",
+      "picked": "已绑定文件夹「{{name}}」",
+      "denied": "没有获得文件夹权限",
+      "push": "立即备份 {{n}} 份",
+      "pushed": "已备份 {{n}} 份简历",
+      "pull": "从文件夹导入",
+      "pulled": "导入 {{imported}} 份，跳过 {{skipped}} 份",
+      "forget": "解除绑定",
+      "forgotten": "已解除文件夹绑定",
+      "autosaveHint": "绑定后每次编辑都会在 1.5 秒内自动写入同名 JSON 文件；重命名会删掉旧文件。",
+      "footnote": "浏览器关闭后再次进入需要重新授权文件夹权限。",
+      "storageFull": "浏览器本地存储已写满，本次修改只存在于内存里，刷新就会丢失。请删除多余简历或换小一点的头像，或立即用「本地备份」把简历写入文件夹。"
+    },
+    "faq": {
+      "title": "使用问答",
+      "description": "关于数据存储与导出的几个常见问题。",
+      "items": {
+        "storage": {
+          "q": "我的简历存在哪里？",
+          "a": "全部存在浏览器的 localStorage 里，键名 toolbox.resume。绑定本地文件夹后会额外写成每份一个 JSON 文件；清除浏览器数据会一并删除，重要简历请自行备份。"
+        },
+        "pagedExport": {
+          "q": "导出 PDF 和浏览器打印有什么区别？",
+          "a": "导出 PDF 与长图都是把简历渲染成图片再拼页，文字不可选中；浏览器打印走系统排版引擎，文字可选中复制、也能存成 PDF，需要可复制文字时用它。"
+        },
+        "templateSwitch": {
+          "q": "切换模板会改动我的样式设置吗？",
+          "a": "会。切模板时会用该模板自带的主题色与章节/段间距、页边距覆盖当前设置，这是为了还原模板设计。切换后在左侧「主题色 / 间距」里再调即可。"
+        },
+        "remotePhoto": {
+          "q": "为什么头像填了图片链接，导出却没有？",
+          "a": "跨域图片在没有后端代理的情况下浏览器读不到像素，导出时会被跳过（屏幕上仍能显示）。把图片下载后作为文件上传即可。"
+        }
+      }
+    },
+    "rail": {
+      "content": "内容",
+      "style": "样式",
+      "template": "模板"
+    },
+    "toolbar": {
+      "copy": "复制",
+      "autoOnePage": "智能一页",
+      "pageBreaks": "分页线",
+      "viewMode": {
+        "label": "视图",
+        "edit": "操作",
+        "preview": "预览",
+        "all": "全部"
+      }
+    },
+    "mobile": {
+      "content": "内容",
+      "style": "样式",
+      "preview": "预览"
+    },
+    "ai": {
+      "notConfigured": "尚未配置可用的 AI 模型，请先在「AI 服务商」里填写 Key 并选择模型。",
+      "polish": {
+        "entry": "AI 润色",
+        "title": "AI 润色",
+        "original": "原始内容",
+        "result": "润色后",
+        "instructions": "额外要求（选填）",
+        "instructionsPlaceholder": "例如：语气更正式、突出量化结果",
+        "start": "开始润色",
+        "regenerate": "重新生成",
+        "stop": "停止生成",
+        "apply": "应用内容",
+        "applied": "已应用润色结果",
+        "empty": "这段内容还是空的，没有可润色的文本。",
+        "status": {
+          "ready": "将把该字段的文本发给模型，返回后可整段替换。",
+          "polishing": "生成中…",
+          "finished": "生成完成，确认无误后应用。"
+        }
+      },
+      "pdf": {
+        "entry": "导入 PDF",
+        "needVisionModel": "导入 PDF 需要一个支持图片的模型，请先配置。",
+        "previewTitle": "导入预览",
+        "previewHint": "以下为模型读出的内容，确认后会新建一份简历。",
+        "confirm": "导入为简历",
+        "counts": "条目数",
+        "countsValue": "教育 {{education}} · 工作 {{experience}} · 项目 {{projects}}",
+        "field": {
+          "name": "姓名",
+          "title": "职位",
+          "email": "邮箱"
+        },
+        "warnings": {
+          "missingName": "没有读到姓名，记得手动补上。"
+        }
+      }
+    },
+    "grammar": {
+      "title": "校对结果",
+      "found": "发现 {{count}} 处问题",
+      "clean": "没有发现问题",
+      "apply": "应用",
+      "appliedCount": "已应用 {{count}} 处",
+      "ignore": "忽略",
+      "applyAll": "全部采纳",
+      "clearAll": "清空结果",
+      "applyFailed": "没能在原文里定位到这段文本",
+      "nothingToCheck": "预览是空的，先写点内容再检查。",
+      "types": {
+        "spelling": "错别字",
+        "punctuation": "标点符号",
+        "grammar": "语法"
+      }
+    }
+  },
+  "salary-calculator": {
+    "title": "工资计算器",
+    "description": "按累计预扣法算清五险一金、个税与年终奖，再减掉房租通勤，看每月真实能支配多少、全年能存多少",
+    "mode": {
+      "forward": "正算：税前 → 到手",
+      "reverse": "反算：到手 → 税前"
+    },
+    "groups": {
+      "income": "收入与城市",
+      "employment": "在职月份",
+      "bonus": "年终奖",
+      "deductions": "专项附加扣除",
+      "other": "其他扣除",
+      "living": "生活成本（每月）",
+      "rates": "缴费比例（各地不同，可改）",
+      "ratesEmployee": "个人缴纳",
+      "ratesEmployer": "单位缴纳"
+    },
+    "fields": {
+      "city": "城市",
+      "grossMonthly": "税前月薪(元)",
+      "targetNet": "期望每月到手(元)",
+      "socialBase": "社保基数(元)",
+      "fundBase": "公积金基数(元)",
+      "fundRate": "公积金比例(%)",
+      "startMonth": "发薪起始月",
+      "firstSalaryInYear": "本年度首笔工资",
+      "childEducation": "子女教育(人)",
+      "infantCare": "婴幼儿(人)",
+      "continuingEducation": "继续教育",
+      "mortgage": "住房贷款利息",
+      "rentTier": "住房租金",
+      "elderSupport": "赡养老人(元/月)",
+      "seriousIllness": "大病医疗自付(元/年)",
+      "personalPension": "个人养老金(元/年)",
+      "taxPreferredInsurance": "税优健康险(元/年)",
+      "bonusAmount": "年终奖(元)",
+      "bonusMode": "计税方式",
+      "rent": "房租(元/月)",
+      "commute": "通勤(元/月)",
+      "food": "餐饮(元/月)",
+      "misc": "其他支出(元/月)",
+      "fixedMedical": "大病互助(元/月)",
+      "ratePension": "养老(%)",
+      "rateMedical": "医疗(%)",
+      "rateUnemployment": "失业(%)",
+      "rateEmployerPension": "养老(%)",
+      "rateEmployerMedical": "医疗(%)",
+      "rateEmployerUnemployment": "失业(%)",
+      "rateEmployerInjury": "工伤(%)",
+      "rateEmployerMaternity": "生育(%)"
+    },
+    "placeholders": {
+      "followSalary": "跟随税前月薪"
+    },
+    "hints": {
+      "baseBounds": "当地区间 {{min}} – {{max}}",
+      "baseMax": "上限 {{max}}",
+      "fundRateMax": "当地上限 {{max}}%",
+      "firstSalary": "累计减除费用改按日历月份数计，年中入职会低不少",
+      "mortgageExclusive": "与房贷利息不可同时享受",
+      "annualOnly": "按年计算，只影响汇算，不改每月到手",
+      "capAnnual": "年限额 {{cap}}",
+      "ratesEditable": "多地失业、工伤为阶段性降费，比例以当地当月公布为准"
+    },
+    "options": {
+      "none": "无",
+      "academic": "学历继续教育（400/月）",
+      "qualification": "职业资格（3600/年）",
+      "rentAuto": "按城市（{{tier}} 元/月）",
+      "rentValue": "{{tier}} 元/月",
+      "bonusAuto": "自动选更省的",
+      "bonusSeparate": "单独计税",
+      "bonusMerged": "并入综合所得"
+    },
+    "warnings": {
+      "bonusTrap": "年终奖 {{from}} – {{to}} 是临界区间，多发反而到手更少，减到临界点前一档更划算"
+    },
+    "months": {
+      "value": "{{n}} 月",
+      "count": "{{n}} 个月"
+    },
+    "results": {
+      "solvedGross": "需要谈的税前",
+      "takeHome": "每月到手（均摊）",
+      "living": "每月生活成本",
+      "disposable": "真实可支配",
+      "savingRate": "存钱率",
+      "range": "首月 {{first}} → 年末 {{last}}",
+      "annualSaving": "全年能存 {{amount}}",
+      "breakdownTitle": "每月到手怎么花掉",
+      "tableTitle": "逐月明细（累计预扣）",
+      "tableSubtitle": "同样月薪，年初与年末实发不同，因为个税按累计预扣",
+      "summaryTitle": "年度汇总",
+      "matrixTitle": "五险一金缴费对照",
+      "segment": {
+        "rent": "房租",
+        "commute": "通勤",
+        "food": "餐饮",
+        "misc": "其他",
+        "saving": "可存"
+      }
+    },
+    "table": {
+      "month": "月",
+      "cumulative": "累计应纳税所得",
+      "rate": "税率",
+      "tax": "个税",
+      "insurance": "五险一金",
+      "takeHome": "到手"
+    },
+    "summary": {
+      "annualGross": "全年税前",
+      "monthsWorked": "在职月份",
+      "annualInsurance": "个人五险一金",
+      "salaryTaxPrepaid": "工资已预扣个税",
+      "settlementRefund": "汇算预计可退",
+      "bonusTax": "年终奖个税",
+      "effectiveTaxRate": "实际税率",
+      "takeHomeRate": "到手率",
+      "annualNetCash": "全年到手现金",
+      "annualSaving": "全年能存"
+    },
+    "notes": {
+      "housingFund": "个人 + 单位合计 {{monthly}} 元/月进入你的公积金账户，不计入上面的现金到手",
+      "housingExcess": "公积金超额缴存 {{amount}} 元/月已并入应税所得（财税〔2006〕10 号）",
+      "basePeriod": "缴费基数标准自 {{period}} 起执行",
+      "clamped": "{{label}} 已按当地限额调整为 {{bound}}",
+      "bonusAlternative": "若改为{{mode}}，年终奖个税会相差 {{amount}} 元"
+    },
+    "matrix": {
+      "item": "险种",
+      "employee": "个人",
+      "employer": "单位",
+      "total": "合计",
+      "bases": "社保基数 {{social}} · 公积金基数 {{fund}}（两者口径不同）",
+      "employerCost": "公司用工成本约 {{cost}} 元/月"
+    },
+    "items": {
+      "pension": "养老保险",
+      "medical": "医疗保险",
+      "unemployment": "失业保险",
+      "injury": "工伤保险",
+      "maternity": "生育保险",
+      "housing": "住房公积金"
+    },
+    "cities": {
+      "beijing": "北京",
+      "shanghai": "上海",
+      "guangzhou": "广州",
+      "shenzhen": "深圳",
+      "hangzhou": "杭州",
+      "nanjing": "南京",
+      "suzhou": "苏州",
+      "chengdu": "成都",
+      "wuhan": "武汉",
+      "xian": "西安",
+      "changsha": "长沙",
+      "chongqing": "重庆",
+      "tianjin": "天津",
+      "zhengzhou": "郑州",
+      "qingdao": "青岛",
+      "dongguan": "东莞",
+      "foshan": "佛山",
+      "hefei": "合肥",
+      "other": "其他城市"
+    },
+    "actions": {
+      "resetAll": "恢复默认"
+    },
+    "errors": {
+      "invalid": "输入不完整或有误，暂时算不出结果",
+      "range": "目标到手金额超出可求解范围，请调低一些"
+    },
+    "disclaimer": "结果为预扣口径的估算，年度汇算清缴可能补退；数据版本 2026-09，各地政策与年度调基有差异，以社保局、公积金中心与税务局公布为准。"
+  }
+}

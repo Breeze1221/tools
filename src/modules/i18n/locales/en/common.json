@@ -1,0 +1,422 @@
+{
+  "siteName": "MmzMing's Toolbox",
+  "searchPlaceholder": "Search tools…",
+  "noResults": "No matching tools found",
+  "clearSearch": "Clear search",
+  "closePalette": "Close command palette",
+  "select": {
+    "placeholder": "Select…",
+    "searchPlaceholder": "Search…",
+    "searchAria": "Search {{label}}",
+    "clearSearch": "Clear search",
+    "optionCount": "{{total}} options",
+    "noResults": "No matches",
+    "noMatch": "No matches for “{{query}}”"
+  },
+  "jsonViewer": {
+    "treeAria": "JSON structure",
+    "searchAria": "Search in JSON",
+    "searchPlaceholder": "Search keys and values",
+    "noMatch": "No matches",
+    "prevMatch": "Previous match",
+    "nextMatch": "Next match",
+    "expandAll": "Expand all",
+    "collapseAll": "Collapse all",
+    "copyValue": "Copy value",
+    "copyPath": "Copy path",
+    "copied": "Copied",
+    "copyFailed": "Copy failed",
+    "copiedValue": "Copied the value at {{path}}",
+    "copiedPath": "Copied path {{path}}",
+    "items_one": "{{count}} item",
+    "items_other": "{{count}} items",
+    "keys_one": "{{count}} key",
+    "keys_other": "{{count}} keys",
+    "showMore_one": "Show {{count}} more",
+    "showMore_other": "Show {{count}} more",
+    "hiddenCount_one": "{{count}} more hidden",
+    "hiddenCount_other": "{{count}} more hidden",
+    "moreAria": "Show {{count}} more, {{hidden}} hidden",
+    "page": "page"
+  },
+  "copied": "Copied to clipboard",
+  "fileDrop": {
+    "label": "Add files",
+    "description": "Drop files here, or click to choose from your device",
+    "dropLabel": "Release to add",
+    "browse": "Choose files",
+    "browseFolder": "Choose folder",
+    "pasteHint": "You can also paste",
+    "maxFiles_one": "Up to {{count}} file",
+    "maxFiles_other": "Up to {{count}} files",
+    "listLabel": "Selected files",
+    "remove": "Remove {{name}}",
+    "retry": "Retry {{name}}",
+    "status": {
+      "processing": "Processing",
+      "ready": "Ready",
+      "error": "Failed"
+    },
+    "errors": {
+      "unsupportedOne": "{{name}} is not a supported file type.",
+      "unsupportedMany_one": "{{count}} file was skipped — its type is not supported.",
+      "unsupportedMany_other": "{{count}} files were skipped — their type is not supported.",
+      "tooLarge": "Some files are larger than {{max}} and were skipped.",
+      "tooMany_one": "Only {{count}} file can be added, the rest were skipped.",
+      "tooMany_other": "Only {{count}} files can be added, the rest were skipped."
+    },
+    "announcement": {
+      "added_one": "{{count}} file added",
+      "added_other": "{{count}} files added",
+      "removed": "{{name}} removed",
+      "retrying": "Retrying {{name}}"
+    }
+  },
+  "copyFailed": "Copy failed, please copy manually",
+  "copy": "Copy",
+  "paste": "Paste",
+  "pasteFailed": "Clipboard unavailable, paste manually",
+  "input": "Input",
+  "output": "Output",
+  "error": "Something went wrong",
+  "loading": "Loading…",
+  "generate": "Generate",
+  "generateCount": "Count",
+  "clear": "Clear",
+  "reset": "Reset",
+  "datePicker": {
+    "rangeLabel": "Date range",
+    "singleLabel": "Date",
+    "placeholder": "Select dates",
+    "noDates": "No dates",
+    "dayCount_one": "{{count}} day",
+    "dayCount_other": "{{count}} days",
+    "pickEnd": "Pick an end date",
+    "pickEndStatus": "Starts {{start}}. Choose an end date.",
+    "clear": "Clear",
+    "cancel": "Cancel",
+    "apply": "Apply",
+    "time": "Time",
+    "presetsGroup": "Quick ranges",
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month",
+    "prevYear": "Previous year",
+    "nextYear": "Next year",
+    "presets": {
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "last7": "Last 7 days",
+      "last30": "Last 30 days",
+      "thisMonth": "This month",
+      "lastMonth": "Last month",
+      "thisQuarter": "This quarter",
+      "ytd": "Year to date"
+    }
+  },
+  "fullscreen": "Fullscreen",
+  "resizePanes": "Drag to resize panes",
+  "caretPosition": "Line {{line}} · Col {{column}}",
+  "charsAndLines": "{{chars}} chars · {{lines}} lines",
+  "inputFormat": "Input format",
+  "outputFormat": "Output format",
+  "formats": {
+    "json": "JSON",
+    "json-min": "JSON (minified)",
+    "yaml": "YAML",
+    "toml": "TOML",
+    "xml": "XML",
+    "csv": "CSV",
+    "markdown": "Markdown",
+    "html": "HTML",
+    "sql": "SQL"
+  },
+  "theme": "Theme",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "themeSystem": "System",
+  "themeCycle": "Theme: {{current}}. Click to switch to {{next}}.",
+  "language": "Language",
+  "localeCycle": "Language: {{current}}. Click to switch to {{next}}.",
+  "favorites": "Favorites",
+  "favoritesEmpty": "No favorites yet, click the star on a tool page to add one",
+  "favoriteAdd": "Add to favorites",
+  "favoriteRemove": "Remove from favorites",
+  "copyLink": "Copy page link",
+  "recent": "Recent tools",
+  "clearRecent": "Clear recent tools",
+  "randomTool": "Open a random tool",
+  "toggleTheme": "Toggle dark mode",
+  "blog": "Blog",
+  "github": "GitHub repository",
+  "about": "About",
+  "actions": "Quick actions",
+  "breadcrumbHome": "Tools",
+  "openMenu": "Open navigation menu",
+  "backHome": "Back to home",
+  "dock": {
+    "home": "Home",
+    "categories": "Tool categories",
+    "tools": "{{category}} tools",
+    "menu": "Menu",
+    "settings": "Quick actions",
+    "brightness": "Brightness",
+    "expand": "Show navigation",
+    "collapse": "Hide navigation",
+    "back": "Back to categories",
+    "more": "More"
+  },
+  "beian": {
+    "policeAlt": "PSB filing badge"
+  },
+  "footer": {
+    "ariaLabel": "Site footer",
+    "tagline": "Encoding, conversion, cheat sheets and image tools gathered in one place — open and use.",
+    "popular": "Popular tools",
+    "about": "About this site",
+    "home": "Home",
+    "copyright": "© {{year}} {{site}}",
+    "toolCount": "{{total}} tools",
+    "faq": {
+      "title": "FAQ",
+      "more": "All questions",
+      "q-account": "Do the tools need an account or a fee?",
+      "a-account": "Neither. Open a page and use it — no sign-up, no plan, no usage limit.",
+      "q-privacy": "Is the data I paste uploaded?",
+      "a-privacy": "No. Text, images and secrets are processed on this device and the site sends no requests. The one exception is an AI provider you configure yourself — that traffic goes straight to the endpoint you set.",
+      "q-mobile": "Does it work on a phone?",
+      "a-mobile": "Yes. Phone, tablet and desktop each get their own layout; favourites and recent tools stay on this device and do not follow you to another one.",
+      "q-contribute": "Want a new tool, or found a bug?",
+      "a-contribute": "Open an issue on GitHub, or add it yourself following the guide in the repo — the whole site is MIT licensed."
+    }
+  },
+  "crashTitle": "Something went wrong",
+  "crashDescription": "The app hit an unexpected error. Your data lives on this device and is not lost — reloading usually fixes it.",
+  "reload": "Reload",
+  "lightbox": {
+    "title": "Lightbox view",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "fit": "Fit to window",
+    "close": "Close",
+    "hint": "Scroll to zoom · drag to pan · double-click to magnify · click outside the image to close"
+  },
+  "imageCompare": {
+    "label": "Before and after divider",
+    "valueText": "{{percent}}% after",
+    "orientation": "Switch divider direction",
+    "hint": "Drag the divider, or focus it and use the arrow keys"
+  },
+  "colorPicker": {
+    "defaultLabel": "Color",
+    "dialogSuffix": "color panel",
+    "pickFromScreen": "Pick a color from the screen",
+    "done": "Done",
+    "areaRoledescription": "2D slider",
+    "saturationBrightness": "Saturation and brightness",
+    "saturationBrightnessValue": "Saturation {{s}}%, brightness {{v}}%",
+    "hue": "Hue",
+    "opacity": "Opacity",
+    "formatAria": "Format: {{format}}. Switch format",
+    "valueAria": "{{label}} in {{format}}",
+    "invalid": "Enter a hex, RGB, HSL, or OKLCH color",
+    "against": "against background",
+    "level": {
+      "aaa": "AAA",
+      "aa": "AA",
+      "aaLarge": "AA large",
+      "fail": "Fails"
+    },
+    "contrastAria": "Contrast {{ratio}} to 1, {{level}}",
+    "saveSwatch": "Save {{color}}",
+    "savedColors": "Saved colors",
+    "swatchAria": "{{color}}. Alt and arrow keys to move, Delete to remove",
+    "noSwatches": "Press + to save this color"
+  },
+  "ai": {
+    "entry": "AI assist",
+    "entryHint": "When off, the polish and proofreading entries are hidden and Import PDF is greyed out. When on, content goes straight to the provider you configure here.",
+    "direct": {
+      "reachable": "Usually direct from browser",
+      "blocked": "Usually needs a CORS-enabled address",
+      "unknown": "Direct access unverified"
+    },
+    "config": {
+      "entry": "AI providers",
+      "title": "AI provider settings",
+      "pickTitle": "Providers",
+      "pickHint": "Configure several providers; pick one to edit it here.",
+      "ready": "Configured",
+      "incomplete": "Needs setup",
+      "notice": "The key stays in this browser local storage and requests go straight from your browser to the address you set. This site neither proxies nor stores it.",
+      "connected": "{{count}}/{{total}} configured",
+      "getKey": "Get a key",
+      "keyPlaceholder": "Paste this provider API key",
+      "keyPublicHint": "Your key is kept in plain text in this browser's local storage. Don't paste it on a shared machine such as an internet cafe, and use \"Clear all keys\" when you are done.",
+      "showKey": "Show key",
+      "hideKey": "Hide key",
+      "baseUrl": "Base URL",
+      "baseUrlHint": "You can point this at your own relay. Use https (http only for localhost); a wrong address means the request never lands.",
+      "models": "Models",
+      "textModel": "Text model (polish and proofread)",
+      "pdfModel": "Vision model (PDF import)",
+      "imageModel": "Image model (AI image gen canvas)",
+      "visionModel": "Vision model (reverse prompting)",
+      "modelPlaceholder": "Type a model name, e.g. deepseek-chat",
+      "textHint": "Each provider keeps its own text, vision, image and reverse-vision pick, so configuring one never overwrites another. The provider that actually runs is the one chosen at the top. The vision slot feeds PDF import, the reverse-vision slot feeds prompt reverse-engineering, and the image slot only applies to OpenAI / Gemini.",
+      "fetchModels": "Fetch models",
+      "directBlocked": "This provider has no CORS enabled: the browser will block the request, so both \"Fetch models\" and later calls fail. Use a CORS-enabled relay address instead.",
+      "fetchOk": "Fetched {{count}} models",
+      "fetchEmpty": "That endpoint returned no models. Use \"Type a model name\" and fill it in.",
+      "unassigned": "Not selected",
+      "manual": "Type a model name...",
+      "fromList": "Pick from list",
+      "listEmpty": "Start with \"Fetch models\" at the top right. If that endpoint is unsupported, choose \"Type a model name\" and fill it in.",
+      "useProvider": "In use",
+      "active": "In use",
+      "clearAll": "Clear all keys"
+    },
+    "test": {
+      "button": "Test connection",
+      "ok": "Connection works",
+      "mismatch": "The reply did not match what was expected",
+      "canvasUnavailable": "This browser cannot create a canvas, so the vision check is unavailable"
+    },
+    "consent": {
+      "title": "Turn on AI assist?",
+      "body": "Once on, polishing, proofreading and PDF import send your resume content directly to the provider you configured, never through this site. Resume text is personal information; make sure you accept that.",
+      "accept": "I understand, turn it on"
+    },
+    "clear": {
+      "title": "Clear every API key on this device?",
+      "body": "This wipes the provider keys stored in this browser and keeps your base URLs and chosen models. It cannot be undone; paste the keys again when you need them.",
+      "action": "Clear keys",
+      "done": "All API keys were cleared from this browser."
+    },
+    "errors": {
+      "invalidProvider": "Unsupported provider; check the configuration.",
+      "configRequired": "Missing API key or model name.",
+      "invalidEndpoint": "The endpoint URL is not valid.",
+      "corsBlocked": "The request never left the browser: this endpoint likely blocks cross-origin calls, or is unreachable from here. Use a CORS-enabled relay address instead.",
+      "networkError": "The network request failed.",
+      "timeout": "The request timed out (120s).",
+      "aborted": "Cancelled.",
+      "authenticationFailed": "The API key is invalid or expired.",
+      "modelAccessDenied": "This key has no access to that model.",
+      "rateLimited": "Rate limited; try again shortly.",
+      "requestTooLarge": "The payload exceeds the request size limit.",
+      "modelOrEndpointError": "The model name or endpoint does not exist.",
+      "upstreamError": "The provider returned an error.",
+      "truncatedOutput": "The model output was cut off by the length limit; shorten the input and retry.",
+      "refused": "The model refused to process this content.",
+      "emptyOutput": "The model returned nothing.",
+      "invalidOutput": "The model response could not be parsed; try again.",
+      "renderFailed": "Failed to render the page.",
+      "pdfUnreadable": "This PDF could not be read.",
+      "tooManyPages": "At most 10 pages are supported.",
+      "fileTooLarge": "The file is over 20MB.",
+      "encryptedPdf": "The PDF is encrypted and cannot be imported.",
+      "unknown": "An unknown error occurred."
+    }
+  },
+  "tour": {
+    "intro": "Page tour",
+    "welcome": "What would you like to look at? I can show you around.",
+    "ai": "AI assistant (in progress)",
+    "progress": "Stop {{n}} of {{total}}",
+    "next": "Next",
+    "done": "Finish tour",
+    "fastSpeed": "Speak faster",
+    "normalSpeed": "Back to normal speed",
+    "replay": "Replay this line",
+    "steps": {
+      "dock": {
+        "body": "This is the navigation. Click a category to reveal its tools; click the same one again to close it. You can also collapse the rail against the left edge."
+      },
+      "search": {
+        "body": "Search every tool here — Chinese names, English names and keywords all match. The pill in the top bar is the same entry, with its shortcut shown on it."
+      },
+      "topNav": {
+        "body": "These pills up top are search, language and theme. To the right are the blog, GitHub and about links."
+      },
+      "circuit": {
+        "body": "This circuit board is the whole toolset: each chip is a category. Light up a category tab on a chip to expand that group’s tools."
+      }
+    }
+  },
+  "empty": {
+    "art": {
+      "search": {
+        "idle": "A magnifying glass over three empty result rows",
+        "loading": "A magnifying glass over three empty result rows",
+        "done": "A results list with a search field and two results"
+      },
+      "offline": {
+        "idle": "A cloud joined to a device by a broken line",
+        "loading": "The broken line reaching back toward the cloud",
+        "done": "A cloud joined to a device by an unbroken line, with a check on the device"
+      },
+      "inbox": {
+        "idle": "A stacked tray with a check mark",
+        "loading": "A stacked tray being checked again",
+        "done": "A stacked tray with a check mark"
+      },
+      "map": {
+        "idle": "A folded map with a dashed route that ends in an x",
+        "loading": "A folded map while the route is looked up again",
+        "done": "A folded map whose dashed route ends at a checked destination"
+      }
+    },
+    "search": {
+      "idle": {
+        "title": "No matching tools",
+        "line": "Try another keyword, or clear the search to see everything.",
+        "action": "Clear search"
+      },
+      "loading": "",
+      "done": {
+        "title": "Search cleared",
+        "line": "Showing every tool.",
+        "action": "Type again"
+      }
+    },
+    "offline": {
+      "idle": {
+        "title": "You are offline",
+        "line": "This step needs the network, and this device has no connection right now.",
+        "action": "Try again"
+      },
+      "loading": "Reconnecting…",
+      "done": {
+        "title": "Back online",
+        "line": "The result was just refreshed.",
+        "action": "Go offline"
+      }
+    },
+    "inbox": {
+      "idle": {
+        "title": "All done here",
+        "line": "Nothing is left to handle. New items land here first.",
+        "action": "Check again"
+      },
+      "loading": "Checking…",
+      "done": {
+        "title": "Still all done",
+        "line": "Checked just now. Nothing new since then.",
+        "action": "Check once more"
+      }
+    },
+    "map": {
+      "idle": {
+        "title": "Page not found",
+        "line": "This address is not in the site’s route table, and it will not redirect anywhere.",
+        "action": "Search the tools"
+      },
+      "loading": "Looking it up…",
+      "done": {
+        "title": "Found the way in",
+        "line": "Continue from the category grid on the home page.",
+        "action": "Back to home"
+      }
+    }
+  }
+}

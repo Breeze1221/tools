@@ -1,0 +1,79 @@
+import { useTranslation } from 'react-i18next'
+
+import { MorphSelect } from '@/components/select/morph-select'
+import { Label } from '@/components/ui/label'
+import { Slider } from '@/components/ui/slider'
+
+import {
+  LINE_HEIGHT_MAX,
+  LINE_HEIGHT_MIN,
+  LINE_HEIGHT_STEP,
+  resumeFontOptions,
+} from '../../constants'
+import { useResumeStore } from '../../store'
+import { FontSizeSelect } from '../FontSizeSelect'
+
+/** 排版浮层：字体、行高、正文 / 章节 / 小标题字号 */
+export function TypographyPanel() {
+  const { t } = useTranslation('tools-resume')
+  const stored = useResumeStore((state) => state.activeResume?.globalSettings)
+  const settings = stored ?? {}
+  const updateGlobalSettings = useResumeStore((state) => state.updateGlobalSettings)
+
+  return (
+    <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2">
+        <Label className="text-muted-foreground">
+          {t('resume.sidePanel.typography.font.title')}
+        </Label>
+        <MorphSelect
+          label={t('resume.sidePanel.typography.font.title')}
+          hideLabel
+          items={resumeFontOptions.map((font) => ({
+            value: font.family,
+            label: t(`resume.sidePanel.typography.font.family.${font.id}`),
+          }))}
+          value={settings.fontFamily ?? null}
+          onValueChange={(value) => updateGlobalSettings({ fontFamily: value })}
+        />
+        <p className="text-muted-foreground text-xs leading-5">
+          {t('resume.sidePanel.typography.font.note')}
+        </p>
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <Label className="text-muted-foreground">
+          {t('resume.sidePanel.typography.lineHeight.title')}
+        </Label>
+        <div className="flex items-center gap-4">
+          <Slider
+            className="flex-1"
+            value={[settings.lineHeight ?? 1.5]}
+            min={LINE_HEIGHT_MIN}
+            max={LINE_HEIGHT_MAX}
+            step={LINE_HEIGHT_STEP}
+            onValueChange={([value]) => updateGlobalSettings({ lineHeight: value })}
+          />
+          <span className="text-muted-foreground w-8 shrink-0 text-sm">
+            {settings.lineHeight ?? 1.5}
+          </span>
+        </div>
+      </div>
+
+      {(
+        [
+          ['baseFontSize', 'baseFontSize'],
+          ['headerSize', 'headerSize'],
+          ['subheaderSize', 'subheaderSize'],
+        ] as const
+      ).map(([key, labelKey]) => (
+        <FontSizeSelect
+          key={key}
+          label={t(`resume.sidePanel.typography.${labelKey}.title`)}
+          value={settings[key]}
+          onValueChange={(size) => updateGlobalSettings({ [key]: size })}
+        />
+      ))}
+    </div>
+  )
+}

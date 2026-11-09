@@ -1,0 +1,248 @@
+{
+  "html-entities": {
+    "title": "HTML Entities",
+    "description": "Encode angle brackets, quotes, ampersands and non-ASCII text into named or numeric HTML entities, or decode entities back to plain text.",
+    "textLabel": "Text",
+    "entitiesLabel": "HTML entities"
+  },
+  "url-parser": {
+    "title": "URL Parser",
+    "description": "Break a URL into scheme, host, port, path, query and fragment, expand parameters into a table with percent-decoding, and rebuild it back.",
+    "urlLabel": "URL",
+    "paramsLabel": "Query params",
+    "noParams": "This URL has no query params",
+    "paramName": "Name",
+    "paramValue": "Value"
+  },
+  "device-information": {
+    "title": "Device Information",
+    "description": "Inspect user agent, screen and viewport size, timezone, languages, network type and hardware limits of the current browser, read locally only.",
+    "field-userAgent": "User Agent",
+    "field-platform": "Platform",
+    "field-language": "Language",
+    "field-screenResolution": "Screen Resolution",
+    "field-screenColorDepth": "Screen Color Depth",
+    "field-viewport": "Viewport Size",
+    "field-pixelRatio": "Device Pixel Ratio",
+    "field-cpuCores": "CPU Cores",
+    "field-memory": "Device Memory",
+    "field-online": "Online Status",
+    "field-timezone": "Time Zone"
+  },
+  "otp-code-generator-and-validator": {
+    "title": "OTP Code Generator & Validator",
+    "description": "Generate and verify TOTP two-factor codes from a Base32 secret, with adjustable digits and period — the secret never leaves your browser.",
+    "secretLabel": "Base32 secret",
+    "secretPlaceholder": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+    "digitsLabel": "Code digits",
+    "periodLabel": "Refresh period",
+    "periodValue": "{{seconds}} seconds",
+    "currentCodeLabel": "Current code",
+    "remainingSeconds": "Refreshes in {{seconds}}s",
+    "verifyLabel": "Validate a code",
+    "verifyButton": "Validate",
+    "verifyMatch": "The code is valid",
+    "verifyMismatch": "The code does not match"
+  },
+  "user-agent-parser": {
+    "title": "User-Agent Parser",
+    "description": "Paste a User-Agent string to recover the browser, engine, operating system, CPU architecture and device type, with every field explained.",
+    "uaLabel": "User-Agent",
+    "field-browserName": "Browser",
+    "field-browserVersion": "Browser version",
+    "field-engineName": "Rendering engine",
+    "field-engineVersion": "Engine version",
+    "field-osName": "Operating system",
+    "field-osVersion": "OS version",
+    "field-cpuArchitecture": "CPU architecture",
+    "field-deviceType": "Device type",
+    "field-deviceVendor": "Device vendor",
+    "field-deviceModel": "Device model"
+  },
+  "safelink-decoder": {
+    "title": "Safelink Decoder",
+    "description": "Peel redirect wrappers, short links and tracking parameters layer by layer to recover the real destination URL, listing what was stripped.",
+    "inputLabel": "Wrapped redirect URL",
+    "targetLabel": "Final destination",
+    "stepsLabel": "Decode chain",
+    "noRedirect": "No redirect param found; this URL is already the final destination"
+  },
+  "ip-lookup": {
+    "title": "IP Lookup",
+    "description": "Look up your public IP and the geolocation/ISP of any IP (requires network, via free public services)",
+    "publicIpBtn": "Use my public IP",
+    "loading": "Looking up…",
+    "lookupBtn": "Lookup",
+    "mapLink": "View in Amap",
+    "networkNote": "This tool needs the network: geolocation comes from ipwho.is, and “Get my public IP” requests api64.ipify.org, api.ipify.org, ipv4.icanhazip.com and ipinfo.io until one succeeds. Those third-party services see your IP and User-Agent.",
+    "onlineNote": "Geolocation results are for reference only",
+    "fields": {
+      "ip": "IP address",
+      "country": "Country",
+      "region": "Region",
+      "city": "City",
+      "postcode": "Postal code",
+      "continent": "Continent",
+      "coordinates": "Approx. coordinates",
+      "capital": "Capital",
+      "callingCode": "Calling code",
+      "isp": "ISP",
+      "org": "Organization",
+      "asn": "ASN",
+      "domain": "Domain",
+      "timezone": "Timezone",
+      "utcOffset": "UTC offset",
+      "abbreviation": "Timezone abbr.",
+      "localTime": "Local time"
+    },
+    "retryBtn": "Try again"
+  },
+  "dns-lookup": {
+    "title": "DNS Lookup",
+    "description": "Query A/AAAA/CNAME/MX/TXT/NS/SOA/SRV/CAA records at once, with TTL, multi-resolver comparison and record diagnostics (requires network)",
+    "inputPlaceholder": "example.com / https://example.com/path / IDN",
+    "lookupBtn": "Lookup",
+    "loading": "Looking up…",
+    "compareLabel": "Compare resolvers",
+    "sourceAria": "Resolver",
+    "compareTitle": "Resolver comparison",
+    "compareEmpty": "Neither resolver returned any record",
+    "compareNote": "Only record values are compared: public resolvers cache at different times, so TTL gaps are not a mismatch",
+    "domainLabel": "Queried domain",
+    "shareBtn": "Copy link",
+    "copyAllBtn": "Copy all records",
+    "recordCount": "{{total}} records across {{types}} record types",
+    "otherTypes": "Other types",
+    "truncated": "Response truncated",
+    "cnameVia": "via CNAME:",
+    "networkNote": "This tool needs the network: queries go straight to the public DoH resolver you pick, which sees the domain and record types you look up. Cloudflare and Google are usually unreachable from mainland China.",
+    "onlineNote": "Answers come from public recursive DNS caches and are for reference only; your local ISP may resolve differently.",
+    "errors": {
+      "empty": "Enter a domain",
+      "invalid": "Not a valid hostname — use something like example.com"
+    },
+    "states": {
+      "empty": "no record",
+      "nxdomain": "not found",
+      "failed": "failed",
+      "unreachable": "This resolver is unreachable from the current network — pick another one",
+      "nxdomainNotice": "{{domain}} does not exist (NXDOMAIN), so no record type can return anything"
+    },
+    "columns": {
+      "type": "Type",
+      "label": "Host",
+      "value": "Value",
+      "ttl": "TTL"
+    },
+    "soa": {
+      "mname": "Primary NS",
+      "rname": "Admin mailbox",
+      "serial": "Serial",
+      "refresh": "Refresh",
+      "retry": "Retry",
+      "expire": "Expire",
+      "minimum": "Minimum TTL"
+    },
+    "sources": {
+      "alidns": "AliDNS",
+      "alidns-backup": "AliDNS backup 223.6.6.6",
+      "cloudflare": "Cloudflare",
+      "google": "Google"
+    },
+    "typeHint": {
+      "A": "IPv4 address",
+      "AAAA": "IPv6 address",
+      "CNAME": "alias",
+      "MX": "mail exchanger",
+      "TXT": "text, used for SPF and domain validation",
+      "NS": "name server",
+      "SOA": "start of authority",
+      "SRV": "service locator",
+      "CAA": "issuer restriction"
+    },
+    "diagnosisTitle": "Diagnostics",
+    "diagnosisNote": "for reference",
+    "guide": {
+      "title": "DNS record types",
+      "A": {
+        "name": "A record (Address)",
+        "description": "Maps a name to an IPv4 address — the most common record type. Example: example.com points at 1.1.1.1."
+      },
+      "AAAA": {
+        "name": "AAAA record (IPv6 Address)",
+        "description": "Maps a name to an IPv6 address, e.g. example.com points at 2001:db8::1."
+      },
+      "CNAME": {
+        "name": "CNAME record (Canonical Name)",
+        "description": "An alias that points one name at another, e.g. www at example.com; the resolver then looks up the target name."
+      },
+      "MX": {
+        "name": "MX record (Mail Exchange)",
+        "description": "Names the servers that accept mail for the domain, each with a priority (lower wins) and a host name."
+      },
+      "TXT": {
+        "name": "TXT record (Text)",
+        "description": "Free-form text: SPF anti-spam policy, DKIM public keys and domain ownership proofs for console/vendor verification."
+      },
+      "NS": {
+        "name": "NS record (Name Server)",
+        "description": "Delegates a zone: lists the authoritative DNS servers that answer for the domain or subdomain."
+      },
+      "SOA": {
+        "name": "SOA record (Start of Authority)",
+        "description": "One per zone: primary server, admin mailbox, serial number and the refresh/retry/expire timers replicas follow."
+      },
+      "SRV": {
+        "name": "SRV record (Service Locator)",
+        "description": "Publishes the host and port of a named service such as SIP or XMPP, with priority and weight."
+      },
+      "CAA": {
+        "name": "CAA record (Certification Authority Authorization)",
+        "description": "Restricts which CAs may issue TLS certificates for the domain, blocking mistaken or malicious issuance."
+      },
+      "usage": {
+        "name": "Typical use cases",
+        "description": "Site migrations, load balancing, CDN onboarding, corporate mail setup, certificate issuance and ownership verification."
+      }
+    },
+    "levels": {
+      "error": "Error",
+      "warn": "Warning",
+      "info": "Info"
+    },
+    "findings": {
+      "cnameConflict": {
+        "title": "CNAME coexists with other records at the same name",
+        "detail": "RFC 1034 §3.6.2: a name with a CNAME cannot also carry A/MX/TXT records — those get ignored. For a zone apex (@), use an A record or CNAME flattening."
+      },
+      "mxNoAddress": {
+        "title": "MX target resolves to no address",
+        "detail": "Mail delivery will fail; add an A or AAAA record for the hosts below."
+      },
+      "spfMultiple": {
+        "title": "More than one v=spf1 record on the same host",
+        "detail": "RFC 7208 allows exactly one SPF record; several are a permanent error for the receiving side. Merge them."
+      },
+      "spfTooManyLookups": {
+        "title": "SPF exceeds the DNS lookup limit",
+        "detail": "RFC 7208 §4.6: include / a / mx / ptr / exists may trigger at most 10 lookups; beyond that the check fails outright."
+      },
+      "noAddress": {
+        "title": "Neither an A nor an AAAA record",
+        "detail": "The host is not directly reachable. That is expected for mail-only or validation-only names."
+      },
+      "noRecordsAtAll": {
+        "title": "This host has no records at all",
+        "detail": "All nine types came back empty. If you queried a subdomain, double-check the host name or add a record in your DNS console."
+      },
+      "caaMissing": {
+        "title": "No CAA record",
+        "detail": "Any CA may issue for this domain. Add a CAA record if you want to restrict issuers."
+      },
+      "caaPresent": {
+        "title": "Issuers allowed by CAA",
+        "detail": "Only the listed CAs may issue certificates; check this first when issuance fails."
+      }
+    }
+  }
+}

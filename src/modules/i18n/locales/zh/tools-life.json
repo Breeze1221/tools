@@ -1,0 +1,236 @@
+{
+  "barbecue-planner": {
+    "title": "烧烤规划器",
+    "description": "按 1–20 人点具体菜品与撒料蘸料，自动算出采购克重与串数、调料耗材用量、腌料配比、带真实钟点的烤制时间线、炉具炭量与中心温度安全线，清单可勾选、可划掉、可出图。",
+    "fields": {
+      "people": "人数",
+      "peopleValue": "{{n}} 人",
+      "appetite": "饭量",
+      "equipment": "烤制设备",
+      "diet": "忌口与偏好",
+      "grillStart": "开烤时间"
+    },
+    "diet": {
+      "on": "已开 {{n}} 项",
+      "none": "无限制"
+    },
+    "tabs": {
+      "dishes": "菜单",
+      "shopping": "采购清单",
+      "recipe": "配方",
+      "sauces": "撒料·蘸料",
+      "timeline": "烤制时间线",
+      "equipment": "炉具与炭",
+      "safety": "食品安全"
+    },
+    "dish": {
+      "groupHint": "本组 {{total}} 道，已点 {{picked}} 道",
+      "selectAll": "本组全选",
+      "clearGroup": "本组清空",
+      "selectMatches": "选中这些",
+      "clearMatches": "取消选中",
+      "noDevice": "当前设备烤不了",
+      "needsMarinate": "需提前腌",
+      "search": "搜索菜名…",
+      "searchClear": "清空搜索",
+      "searchHint": "找到 {{total}} 道，已点 {{picked}} 道",
+      "noSearchResult": "没有匹配的菜 —— 换个词，或清空搜索框翻分组。"
+    },
+    "qty": {
+      "auto": "自动",
+      "manual": "手动",
+      "hint": "自动：每道菜的量由引擎按人数和勾选的菜数摊薄；手动：勾上的卡片右下角直接填数量。"
+    },
+    "sauce": {
+      "basic": "基本",
+      "basicHint": "买来直接用的成品调料，勾了才进采购清单；不勾就是这次不带。",
+      "blend": "调配",
+      "hint": "共 {{total}} 种，已选 {{picked}} 种。撒料、刷酱、蘸料按口味自由组合；腌料不用选，跟着所点的肉自动配套。",
+      "fits": "本桌适配 {{n}} 道",
+      "noFit": "本桌没有适配的菜",
+      "yieldPeople": "约 {{n}} 人份"
+    },
+    "summary": {
+      "picked": "已点",
+      "meat": "生肉",
+      "skewers": "肉串",
+      "charcoal": "木炭",
+      "grill": "炉长",
+      "window": "烤制窗口"
+    },
+    "toolbar": {
+      "needDishes": "还没点菜 — 在「菜单」里勾几道，这里会汇总总量与炉具建议。"
+    },
+    "actions": {
+      "openList": "采购清单",
+      "copyList": "复制清单",
+      "reset": "重置",
+      "generateImage": "生成图片",
+      "rendering": "生成中…"
+    },
+    "badge": {
+      "gap": "资料缺口",
+      "optional": "按需",
+      "dropped": "不需要"
+    },
+    "recipe": {
+      "heat": "辣度",
+      "timing": "施加时机",
+      "glutenFreeSwap": "无麸质替换",
+      "marinadeKind": "腌料",
+      "refHint": "调研到的每一版配方都原样列在这里，是参考而不是本桌的用量表 —— 既不随点了什么菜增减，也不按人数缩放。要带哪几样去菜市场，在「菜单」的「撒料·蘸料」里勾。"
+    },
+    "timeline": {
+      "startHint": "钟点按开烤 {{time}} 推导；跨零点的提前量会显示成前一天的时刻。"
+    },
+    "equipment": {
+      "grillTitle": "烤炉与产能",
+      "suggestedGrate": "建议炉长",
+      "ratedFor": "该档适用人数",
+      "perBatch": "单批容量",
+      "skewerUnit": "串",
+      "totalSkewers": "总串数",
+      "batches": "批次",
+      "perBatchTime": "单批时长",
+      "window": "烤制窗口",
+      "charcoal": "木炭",
+      "batchNote": "只有 150 cm 档的「一批约 40 串」有明确来源，其余炉长按炉长线性折算。",
+      "heatZones": "火力档位",
+      "handTest": "手掌可停留",
+      "heatNote": "通用炭烤炉温需 200 ℃ 以上；手放在烤网上方只能撑 2 秒就是大火，4 秒是中火。",
+      "charcoalTitle": "炭种对比",
+      "yakitoriTitle": "烧鸟炭床与家用复刻",
+      "coalBed": "炭床",
+      "distance": "串距热源",
+      "smokerTitle": "烟熏炉温与木材",
+      "yieldBody": "美式清单里的生重已按出成率上浮（牛胸 43%、猪肩 50%、猪腰 65%、整鸡 34%）。换算依据是「1 磅成品约喂 2.6 人」，人均熟肉 175–340 g。",
+      "yieldTotal": "本桌生肉合计"
+    },
+    "safety": {
+      "meat": "肉种",
+      "form": "形态",
+      "tempC": "中心温度",
+      "rest": "静置"
+    },
+    "shop": {
+      "progress": "已买 {{done}} / {{total}} 项",
+      "clearChecks": "清空勾选",
+      "qty": "数量",
+      "unit": "单位",
+      "less": "减少",
+      "more": "增加",
+      "resetOne": "恢复默认量",
+      "resetAll": "全部重置默认",
+      "zeroed": "{{n}} 项置 0 不买",
+      "qtyHint": "数量随便改：点 −／+ 或直接在框里输入，改成 0 就是这次不买 —— 行还留在屏上，但不进复制文本与导出图。改数量只改这一行，木炭、串数与腌料配比仍按调研基准推导。",
+      "textVersion": "文本版（手动复制兜底）",
+      "textHint": "浏览器拦住剪贴板权限时（非 HTTPS 页面、或窗口失去焦点），直接在这里全选复制。置 0 的行不会出现在这段文本里。",
+      "allDoneTitle": "全部买齐了",
+      "allDoneLine": "清单上没有未勾选的项了，出发前再扫一眼就收工。"
+    },
+    "custom": {
+      "add": "加一样",
+      "name": "名称",
+      "qty": "数量",
+      "unit": "单位",
+      "submit": "添加",
+      "cancel": "取消",
+      "remove": "删掉这一项"
+    },
+    "toast": {
+      "imageDone": "图片已生成并下载",
+      "imageFailed": "图片生成失败，请重试"
+    },
+    "emptyResult": "当前组合下没有任何可烤食材 —— 换一个设备或放宽忌口开关。",
+    "conflictTitle": "来源在这些点上互相矛盾，工具不做取舍，由你选口径。",
+    "disclaimer": "数据来自公开配方、监管科普与行业标准，供参考而非规范；请结合自家炉具与食材实际情况调整。"
+  },
+  "chinese-kinship-calculator": {
+    "title": "亲戚关系计算",
+    "description": "点选或输入称谓链，算出中国亲戚之间准确的当面叫法与书面称呼，支持由称呼反查关系、逆推辈分并展示整棵关系树。",
+    "meIs": "我是",
+    "male": "男生",
+    "female": "女生",
+    "queryLabel": "查询",
+    "directionICall": "我称呼对方",
+    "directionTaCall": "对方称呼我",
+    "chainPrefix": "我的",
+    "chainEmpty": "点击下方称谓，或直接输入，如：爸爸的哥哥",
+    "chainLookupTitle": "该称呼也可能指：",
+    "undo": "撤销",
+    "resultTitle": "计算结果",
+    "resultEmpty": "点击下方称谓，计算对方的称呼",
+    "resultInvalid": "无法识别该关系链，请撤销后重试",
+    "subtitleICall": "你对对方的称呼",
+    "subtitleTaCall": "对方对你的称呼",
+    "treeTitle": "辈分关系树",
+    "treeMe": "我",
+    "treeOther": "对方",
+    "treeLegend": "（上为长辈，下为晚辈）",
+    "treeCallLabel": "称呼",
+    "treeBaseline": "基准",
+    "treeEmpty": "选择或输入关系链后，这里显示辈分推导过程",
+    "treeResultCount": "等 {{n}} 个称呼",
+    "clear": "清空",
+    "copy": "复制结果",
+    "copied": "已复制",
+    "examplesTitle": "快速示例",
+    "lane": {
+      "0": "同辈",
+      "1": "父母辈",
+      "2": "祖辈",
+      "3": "曾祖辈",
+      "4": "高祖辈",
+      "5": "五世祖辈",
+      "6": "六世祖辈",
+      "7": "七世祖辈",
+      "-1": "子女辈",
+      "-2": "孙辈",
+      "-3": "曾孙辈",
+      "-4": "玄孙辈",
+      "-5": "来孙辈"
+    },
+    "laneAbove": "上{{n}}辈",
+    "laneBelow": "下{{n}}辈",
+    "laneBaseHint": "同辈基准"
+  },
+  "fortune-draw": {
+    "title": "今日运势抽签",
+    "description": "摇一摇签筒抽取今日运势，节假日吉签概率提升，同一名字在同一天结果固定，签文与解释全部本地生成。",
+    "namePlaceholder": "输入你的名字或昵称",
+    "drawDaily": "今日一签",
+    "drawRandom": "随机一签",
+    "drawing": "诚心摇签中…",
+    "fixedHint": "「今日一签」同一天同一名字结果固定；「随机一签」每次重新抽取，不限次数",
+    "tubeLabel": "签",
+    "emptyHint": "输入名字，点「今日一签」摇出你的今日运势",
+    "level": {
+      "good": "吉",
+      "normal": "平",
+      "bad": "凶"
+    },
+    "luckyStarLabel": "幸运星 ",
+    "luckValueLabel": "运势值",
+    "signLabel": "签文：",
+    "unsignLabel": "解签：",
+    "holidayBoost": "节假日吉运加成",
+    "copy": "复制签文",
+    "disclaimer": "仅供娱乐 | 相信科学 | 请勿迷信"
+  },
+  "unit-converter": {
+    "title": "单位换算",
+    "description": "长度、重量、数据大小、速度与面积的常用单位互转，输入即换算，同时给出换算式与常见易混单位对照，避免手工乘错。",
+    "categoryLabel": "类别",
+    "fromUnit": "从",
+    "toUnit": "到",
+    "valueLabel": "数值",
+    "resultLabel": "结果",
+    "categories": {
+      "length": "长度",
+      "weight": "重量",
+      "data": "数据大小",
+      "speed": "速度",
+      "area": "面积"
+    }
+  }
+}

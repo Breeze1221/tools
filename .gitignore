@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+node_modules
+dist
+dist-ssr
+coverage
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# tsbuildinfo
+*.tsbuildinfo
+
+# sitemap generated at build time
+public/sitemap.xml
+public/robots.txt
+
+# llms.txt generated at build time by scripts/generate-llms.mjs
+public/llms.txt
+public/llms-full.txt
+
+# wasm codecs copied by scripts/prepare-codecs.mjs（gif 产物为提交文件，保留）
+public/codecs/*
+!public/codecs/gif
+public/wasm/*
+!public/wasm/gif.wasm
+
+# AI 生图中间产物，成品图在 public/food
+vibe_images/

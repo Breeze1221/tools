@@ -1,0 +1,236 @@
+{
+  "barbecue-planner": {
+    "title": "BBQ planner",
+    "description": "Pick dishes and seasonings for 1–20 people: it works out purchase weights and skewer counts, seasoning and consumable quantities, marinade ratios, a grill timeline with real clock times, grate size, charcoal and safe core temperatures — with a checkable, strikable, printable list.",
+    "fields": {
+      "people": "People",
+      "peopleValue": "{{n}} people",
+      "appetite": "Appetite",
+      "equipment": "Equipment",
+      "diet": "Diet and preferences",
+      "grillStart": "Grill start"
+    },
+    "diet": {
+      "on": "{{n}} active",
+      "none": "No limits"
+    },
+    "tabs": {
+      "dishes": "Menu",
+      "shopping": "Shopping list",
+      "recipe": "Recipes",
+      "sauces": "Rubs & dips",
+      "timeline": "Timeline",
+      "equipment": "Grill & charcoal",
+      "safety": "Food safety"
+    },
+    "dish": {
+      "groupHint": "{{picked}} of {{total}} picked in this group",
+      "selectAll": "Select group",
+      "clearGroup": "Clear group",
+      "selectMatches": "Select these",
+      "clearMatches": "Clear these",
+      "noDevice": "Not possible on this device",
+      "needsMarinate": "Needs marinating",
+      "search": "Search dishes…",
+      "searchClear": "Clear search",
+      "searchHint": "{{total}} match(es), {{picked}} selected",
+      "noSearchResult": "Nothing matches — try another word, or clear the box to browse the groups."
+    },
+    "qty": {
+      "auto": "Auto",
+      "manual": "Manual",
+      "hint": "Auto: the engine splits each dish across what you picked, based on headcount. Manual: type a quantity on every picked card."
+    },
+    "sauce": {
+      "basic": "Ready-made",
+      "basicHint": "Bottled and bagged seasonings you use straight away — only the checked ones reach the shopping list.",
+      "blend": "Mixed by you",
+      "hint": "{{picked}} of {{total}} selected. Mix rubs, bastes and dips to taste; marinades are not chosen here — they come with the meat you ordered.",
+      "fits": "fits {{n}} dishes here",
+      "noFit": "Nothing on this table fits it",
+      "yieldPeople": "about {{n}} servings"
+    },
+    "summary": {
+      "picked": "Ordered",
+      "meat": "Raw meat",
+      "skewers": "Skewers",
+      "charcoal": "Charcoal",
+      "grill": "Grate",
+      "window": "Window"
+    },
+    "toolbar": {
+      "needDishes": "Nothing ordered yet — pick a few dishes and the totals and grate advice appear here."
+    },
+    "actions": {
+      "openList": "Shopping list",
+      "copyList": "Copy list",
+      "reset": "Reset",
+      "generateImage": "Make image",
+      "rendering": "Rendering…"
+    },
+    "badge": {
+      "gap": "No source",
+      "optional": "If wanted",
+      "dropped": "Not needed"
+    },
+    "recipe": {
+      "heat": "Heat",
+      "timing": "When to apply",
+      "glutenFreeSwap": "Gluten-free swap",
+      "marinadeKind": "Cures",
+      "refHint": "Every mix we sourced is listed as-is. This is a reference, not your shopping sheet: it neither follows the dishes you picked nor scales to the head count. Choose what to buy under rubs & dips in the menu."
+    },
+    "timeline": {
+      "startHint": "Clock times run back from {{time}}; a lead longer than midnight shows the previous day."
+    },
+    "equipment": {
+      "grillTitle": "Grill and throughput",
+      "suggestedGrate": "Suggested grate",
+      "ratedFor": "Rated for",
+      "perBatch": "Per batch",
+      "skewerUnit": "skewers",
+      "totalSkewers": "Total skewers",
+      "batches": "Batches",
+      "perBatchTime": "Per batch time",
+      "window": "Grilling window",
+      "charcoal": "Charcoal",
+      "batchNote": "Only the 150 cm tier has a sourced batch count; the rest are scaled by grate length.",
+      "heatZones": "Heat zones",
+      "handTest": "hand test",
+      "heatNote": "Aim above 200 ℃; two seconds over the grate is high heat, four is medium.",
+      "charcoalTitle": "Charcoal compared",
+      "yakitoriTitle": "Yakitori coal beds and indoor replicas",
+      "coalBed": "coal bed",
+      "distance": "Skewer distance",
+      "smokerTitle": "Smoker temperatures and wood",
+      "yieldBody": "American quantities are already inflated by cooking yield (brisket 43 %, pork butt 50 %, loin 65 %, whole chicken 34 %). The rule of thumb is one finished pound per 2.6 people.",
+      "yieldTotal": "Raw total on this table"
+    },
+    "safety": {
+      "meat": "Meat",
+      "form": "Form",
+      "tempC": "Core temp",
+      "rest": "Rest"
+    },
+    "shop": {
+      "progress": "{{done}} / {{total}} bought",
+      "clearChecks": "Clear checks",
+      "qty": "Quantity",
+      "unit": "Unit",
+      "less": "Less",
+      "more": "More",
+      "resetOne": "Back to default",
+      "resetAll": "Reset all to defaults",
+      "zeroed": "{{n}} set to 0",
+      "qtyHint": "Edit any quantity with − / + or by typing. Zero means \"not this time\" — the row stays on screen so you can undo it, but it leaves the copy text and the exported image. Quantities only change their own row: charcoal, skewer totals and marinade ratios keep running off the researched baseline.",
+      "textVersion": "Plain text (manual copy fallback)",
+      "textHint": "When the browser blocks clipboard access (non-HTTPS page, or the window lost focus), select and copy here. Rows set to zero never appear in this text.",
+      "allDoneTitle": "Everything is on the list",
+      "allDoneLine": "No unchecked items left. Scan it once more before you head out."
+    },
+    "custom": {
+      "add": "Add an item",
+      "name": "Name",
+      "qty": "Quantity",
+      "unit": "Unit",
+      "submit": "Add",
+      "cancel": "Cancel",
+      "remove": "Remove this item"
+    },
+    "toast": {
+      "imageDone": "Image generated and downloaded",
+      "imageFailed": "Image export failed — try again"
+    },
+    "emptyResult": "Nothing is grillable with this combination — change the device or relax the diet switches.",
+    "conflictTitle": "The sources disagree on these points; the tool takes no side — you choose the reading.",
+    "disclaimer": "Compiled from published recipes, regulator guidance and industry standards — reference, not specification. Adjust to your own grill and ingredients."
+  },
+  "chinese-kinship-calculator": {
+    "title": "Chinese Kinship Calculator",
+    "description": "Pick or type a relation chain to get the exact Chinese kinship term, with reverse lookup from a term and a generation tree view.",
+    "meIs": "I am",
+    "male": "Male",
+    "female": "Female",
+    "queryLabel": "Query",
+    "directionICall": "I call them",
+    "directionTaCall": "They call me",
+    "chainPrefix": "My",
+    "chainEmpty": "Tap the terms below, or type a chain like 爸爸的哥哥",
+    "chainLookupTitle": "This term may also mean:",
+    "undo": "Undo",
+    "resultTitle": "Result",
+    "resultEmpty": "Tap a term to see how to address them",
+    "resultInvalid": "Cannot resolve this chain — undo and try again",
+    "subtitleICall": "How you address them",
+    "subtitleTaCall": "How they address you",
+    "treeTitle": "Generation tree",
+    "treeMe": "Me",
+    "treeOther": "Them",
+    "treeLegend": " (above = elder, below = younger)",
+    "treeCallLabel": "calls",
+    "treeBaseline": "baseline",
+    "treeEmpty": "Build a chain to see how the term is derived",
+    "treeResultCount": "+{{n}} terms",
+    "clear": "Clear",
+    "copy": "Copy result",
+    "copied": "Copied",
+    "examplesTitle": "Quick examples",
+    "lane": {
+      "0": "Same gen",
+      "1": "Parent",
+      "2": "Grandparent",
+      "3": "Great-grand",
+      "4": "Great-great-grand",
+      "5": "5th ancestral gen",
+      "6": "6th ancestral gen",
+      "7": "7th ancestral gen",
+      "-1": "Child",
+      "-2": "Grandchild",
+      "-3": "Great-grandchild",
+      "-4": "Great-great-grandchild",
+      "-5": "5th-generation descendant"
+    },
+    "laneAbove": "{{n}} gen above",
+    "laneBelow": "{{n}} gen below",
+    "laneBaseHint": "baseline"
+  },
+  "fortune-draw": {
+    "title": "Daily Fortune Draw",
+    "description": "Shake the tube and draw your daily fortune — boosted luck on holidays, same name same result per day, all computed locally",
+    "namePlaceholder": "Your name or nickname",
+    "drawDaily": "Draw Today's Lot",
+    "drawRandom": "Random Draw",
+    "drawing": "Shaking the tube…",
+    "fixedHint": "\"Draw Today's Lot\" stays fixed for the same name on the same day; \"Random Draw\" redraws every time, no limits",
+    "tubeLabel": "签",
+    "emptyHint": "Enter a name and draw your fortune for today",
+    "level": {
+      "good": "Lucky",
+      "normal": "Fair",
+      "bad": "Rough"
+    },
+    "luckyStarLabel": "Lucky stars ",
+    "luckValueLabel": "Luck",
+    "signLabel": "Lot: ",
+    "unsignLabel": "Reading: ",
+    "holidayBoost": "Holiday luck boost",
+    "copy": "Copy fortune",
+    "disclaimer": "For fun only | Trust science | No superstition"
+  },
+  "unit-converter": {
+    "title": "Unit Converter",
+    "description": "Convert length, weight, data size, speed and area units with the factor shown, so you can check the math instead of guessing it.",
+    "categoryLabel": "Category",
+    "fromUnit": "From",
+    "toUnit": "To",
+    "valueLabel": "Value",
+    "resultLabel": "Result",
+    "categories": {
+      "length": "Length",
+      "weight": "Weight",
+      "data": "Data size",
+      "speed": "Speed",
+      "area": "Area"
+    }
+  }
+}

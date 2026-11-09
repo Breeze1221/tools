@@ -1,0 +1,248 @@
+{
+  "html-entities": {
+    "title": "HTML 实体",
+    "description": "HTML 实体与原文互转：把尖括号、引号、与号和中文转成命名实体或数字引用，也能把实体还原成文本，支持整段批量粘贴。",
+    "textLabel": "原文",
+    "entitiesLabel": "HTML 实体"
+  },
+  "url-parser": {
+    "title": "URL 解析",
+    "description": "把 URL 拆成协议、主机、端口、路径、查询参数与片段，参数自动展开成表格并做百分号解码，支持重新拼装回链接。",
+    "urlLabel": "URL",
+    "paramsLabel": "查询参数",
+    "noParams": "该 URL 没有查询参数",
+    "paramName": "参数名",
+    "paramValue": "参数值"
+  },
+  "device-information": {
+    "title": "设备信息",
+    "description": "查看当前浏览器的用户代理、屏幕与视口尺寸、时区、语言、网络类型与硬件能力，便于复现用户侧问题，信息只在本地读取。",
+    "field-userAgent": "用户代理",
+    "field-platform": "平台",
+    "field-language": "语言",
+    "field-screenResolution": "屏幕分辨率",
+    "field-screenColorDepth": "屏幕色深",
+    "field-viewport": "视口尺寸",
+    "field-pixelRatio": "设备像素比",
+    "field-cpuCores": "CPU 核心数",
+    "field-memory": "设备内存",
+    "field-online": "在线状态",
+    "field-timezone": "时区"
+  },
+  "otp-code-generator-and-validator": {
+    "title": "OTP 验证码",
+    "description": "生成并校验 TOTP 两步验证码：输入 Base32 密钥即可算出当前动态码与剩余有效期，位数与时间步长可调，密钥不离开浏览器。",
+    "secretLabel": "Base32 密钥",
+    "secretPlaceholder": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+    "digitsLabel": "验证码位数",
+    "periodLabel": "刷新周期",
+    "periodValue": "{{seconds}} 秒",
+    "currentCodeLabel": "当前验证码",
+    "remainingSeconds": "{{seconds}} 秒后刷新",
+    "verifyLabel": "校验验证码",
+    "verifyButton": "校验",
+    "verifyMatch": "验证码正确",
+    "verifyMismatch": "验证码不匹配"
+  },
+  "user-agent-parser": {
+    "title": "User-Agent 解析",
+    "description": "粘贴 User-Agent 字符串，解析出浏览器与版本、内核、操作系统、CPU 架构和设备类型，附各字段含义说明，本地解析不联网。",
+    "uaLabel": "User-Agent",
+    "field-browserName": "浏览器",
+    "field-browserVersion": "浏览器版本",
+    "field-engineName": "渲染引擎",
+    "field-engineVersion": "引擎版本",
+    "field-osName": "操作系统",
+    "field-osVersion": "系统版本",
+    "field-cpuArchitecture": "CPU 架构",
+    "field-deviceType": "设备类型",
+    "field-deviceVendor": "设备厂商",
+    "field-deviceModel": "设备型号"
+  },
+  "safelink-decoder": {
+    "title": "跳转链接解码",
+    "description": "逐层解开安全跳转、短链与带跟踪参数的包装链接，还原真实目标地址，并列出每一跳剥掉的参数，全部在本地解析。",
+    "inputLabel": "被包装的跳转 URL",
+    "targetLabel": "最终目标",
+    "stepsLabel": "解码链",
+    "noRedirect": "未发现跳转参数，该链接已是最终地址"
+  },
+  "ip-lookup": {
+    "title": "IP 查询",
+    "description": "查询本机公网 IP 与任意 IP 的归属地、ISP（需联网，查询走免费公共服务）",
+    "publicIpBtn": "获取本机公网 IP",
+    "loading": "查询中…",
+    "lookupBtn": "查询",
+    "mapLink": "在高德地图中查看",
+    "networkNote": "本工具需要联网：归属地查询会请求 ipwho.is；点「获取本机公网 IP」时依次请求 api64.ipify.org、api.ipify.org、ipv4.icanhazip.com、ipinfo.io 直到有一个成功。这些第三方服务会看到你的 IP 与 User-Agent。",
+    "onlineNote": "归属地结果仅供参考",
+    "fields": {
+      "ip": "IP 地址",
+      "country": "国家 / 地区",
+      "region": "省 / 州",
+      "city": "城市",
+      "postcode": "邮政编码",
+      "continent": "大洲",
+      "coordinates": "近似经纬度",
+      "capital": "首都",
+      "callingCode": "国际区号",
+      "isp": "网络服务商",
+      "org": "组织",
+      "asn": "ASN",
+      "domain": "网络域名",
+      "timezone": "时区",
+      "utcOffset": "UTC 偏移",
+      "abbreviation": "时区缩写",
+      "localTime": "当地时间"
+    },
+    "retryBtn": "再试一次"
+  },
+  "dns-lookup": {
+    "title": "域名解析查询",
+    "description": "一次查全 A/AAAA/CNAME/MX/TXT/NS/SOA/SRV/CAA 记录，含 TTL、多公共 DNS 对比与解析体检（需联网）",
+    "inputPlaceholder": "example.com / https://example.com/path / 中文域名",
+    "lookupBtn": "查询",
+    "loading": "查询中…",
+    "compareLabel": "多源对比",
+    "sourceAria": "解析源",
+    "compareTitle": "多源对比",
+    "compareEmpty": "两个源都没有返回任何记录",
+    "compareNote": "只比较记录值：各公共 DNS 缓存时机不同，TTL 差异不算不一致",
+    "domainLabel": "查询域名",
+    "shareBtn": "复制链接",
+    "copyAllBtn": "复制全部记录",
+    "recordCount": "共 {{total}} 条记录，分布在 {{types}} 个类型",
+    "otherTypes": "其余类型",
+    "truncated": "响应被截断",
+    "cnameVia": "经由 CNAME：",
+    "networkNote": "本工具需要联网：查询直连所选的公共 DoH 服务，被查询的域名与记录类型会发送给该服务商。国内网络下 Cloudflare / Google 通常不可达。",
+    "onlineNote": "结果取自公共递归 DNS 的缓存，仅供参考；你本地运营商看到的解析结果可能不同。",
+    "errors": {
+      "empty": "请输入域名",
+      "invalid": "域名格式不正确，应为 example.com 这样的两级以上主机名"
+    },
+    "states": {
+      "empty": "无记录",
+      "nxdomain": "域名不存在",
+      "failed": "查询失败",
+      "unreachable": "该 DNS 服务在当前网络不可达，请换一个源重试",
+      "nxdomainNotice": "域名 {{domain}} 不存在（NXDOMAIN），任何类型都不会有记录"
+    },
+    "columns": {
+      "type": "类型",
+      "label": "主机记录",
+      "value": "记录值",
+      "ttl": "TTL"
+    },
+    "soa": {
+      "mname": "主域名服务器",
+      "rname": "管理员邮箱",
+      "serial": "序列号",
+      "refresh": "刷新",
+      "retry": "重试",
+      "expire": "过期",
+      "minimum": "最小 TTL"
+    },
+    "sources": {
+      "alidns": "阿里公共 DNS",
+      "alidns-backup": "阿里备用 223.6.6.6",
+      "cloudflare": "Cloudflare",
+      "google": "Google"
+    },
+    "typeHint": {
+      "A": "IPv4 地址",
+      "AAAA": "IPv6 地址",
+      "CNAME": "别名指向",
+      "MX": "邮件交换",
+      "TXT": "文本记录，常用于 SPF 与域名验证",
+      "NS": "域名服务器",
+      "SOA": "起始授权信息",
+      "SRV": "服务定位",
+      "CAA": "证书签发限制"
+    },
+    "diagnosisTitle": "解析体检",
+    "diagnosisNote": "仅供参考",
+    "guide": {
+      "title": "DNS 记录说明",
+      "A": {
+        "name": "A 记录 (Address)",
+        "description": "将域名指向 IPv4 地址，是最常见的记录类型。例如将 example.com 指向 1.1.1.1。"
+      },
+      "AAAA": {
+        "name": "AAAA 记录 (IPv6 Address)",
+        "description": "将域名指向 IPv6 地址。例如将 example.com 指向 2001:db8::1。"
+      },
+      "CNAME": {
+        "name": "CNAME 记录 (Canonical Name)",
+        "description": "别名记录，将一个域名指向另一个域名。例如将 www 指向 example.com，解析器会再去查询目标域名的地址。"
+      },
+      "MX": {
+        "name": "MX 记录 (Mail Exchange)",
+        "description": "邮件交换记录，指向处理该域名邮件的服务器，包含优先级（数值越小越优先）和服务器地址。"
+      },
+      "TXT": {
+        "name": "TXT 记录 (Text)",
+        "description": "任意文本记录，常用于 SPF 反垃圾邮件策略、DKIM 公钥与域名所有权验证（如站长平台验证）等。"
+      },
+      "NS": {
+        "name": "NS 记录 (Name Server)",
+        "description": "域名服务器记录，指定负责该域名（或子域名）权威解析的 DNS 服务器地址。"
+      },
+      "SOA": {
+        "name": "SOA 记录 (Start of Authority)",
+        "description": "起始授权机构记录，每个区域只有一条，包含主域名服务器、管理员邮箱、序列号及刷新间隔等关键参数。"
+      },
+      "SRV": {
+        "name": "SRV 记录 (Service Locator)",
+        "description": "服务位置记录，用于声明特定服务（如 SIP、XMPP）的服务器地址与端口，带优先级和权重。"
+      },
+      "CAA": {
+        "name": "CAA 记录 (Certification Authority Authorization)",
+        "description": "证书颁发机构授权记录，限定哪些 CA 可以为该域名签发 TLS 证书，用于防止误签与恶意签发。"
+      },
+      "usage": {
+        "name": "常见使用场景",
+        "description": "网站迁移、负载均衡配置、CDN 加速接入、企业邮局设置、SSL 证书签发验证、站长平台所有权验证等。"
+      }
+    },
+    "levels": {
+      "error": "严重",
+      "warn": "注意",
+      "info": "说明"
+    },
+    "findings": {
+      "cnameConflict": {
+        "title": "CNAME 与同名其他记录共存",
+        "detail": "RFC 1034 §3.6.2：挂了 CNAME 的主机名不能再有同名的 A/MX/TXT 记录，否则那些记录会被忽略。若查询的是根域（@），请改用 A 记录或做 CNAME 展平。"
+      },
+      "mxNoAddress": {
+        "title": "MX 指向的主机名解析不到地址",
+        "detail": "邮件投递会失败，请为下列 MX 主机补 A 或 AAAA 记录。"
+      },
+      "spfMultiple": {
+        "title": "同一主机存在多条 v=spf1 记录",
+        "detail": "RFC 7208 规定只能有一条 SPF 记录，多条会被收件方判为永久错误，请合并成一条。"
+      },
+      "spfTooManyLookups": {
+        "title": "SPF 的 DNS 查询次数超过上限",
+        "detail": "RFC 7208 §4.6：include / a / mx / ptr / exists 引发的查询最多 10 次，超出会被直接判失败。"
+      },
+      "noAddress": {
+        "title": "既没有 A 也没有 AAAA 记录",
+        "detail": "该主机名无法直接访问。若它只用于发信或域名验证，属正常情况。"
+      },
+      "noRecordsAtAll": {
+        "title": "该主机名没有任何记录",
+        "detail": "9 个类型全部为空。若查的是子域名，请确认主机名拼写，或到 DNS 控制台添加记录。"
+      },
+      "caaMissing": {
+        "title": "未设置 CAA 记录",
+        "detail": "任何 CA 都可以为该域名签发证书。若需要限制签发方，可添加 CAA 记录。"
+      },
+      "caaPresent": {
+        "title": "CAA 允许的签发方",
+        "detail": "只有列出的 CA 能签发证书；签发失败时先检查这里。"
+      }
+    }
+  }
+}

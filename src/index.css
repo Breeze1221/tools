@@ -1,0 +1,1310 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@import '@fontsource-variable/geist';
+
+/* editorial 模板的富文本区块用 prose/prose-sm 恢复列表与段落节奏 */
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: 'Geist Variable', sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-fortune-good: var(--fortune-good);
+  --color-fortune-normal: var(--fortune-normal);
+  --color-circuit-board: var(--circuit-board);
+  --color-circuit-core: var(--circuit-core);
+  --color-circuit-1: var(--circuit-1);
+  --color-circuit-2: var(--circuit-2);
+  --color-circuit-3: var(--circuit-3);
+  --color-circuit-4: var(--circuit-4);
+  --color-circuit-5: var(--circuit-5);
+  --color-circuit-6: var(--circuit-6);
+  --color-circuit-7: var(--circuit-7);
+  --color-circuit-8: var(--circuit-8);
+  --color-circuit-9: var(--circuit-9);
+  --color-circuit-line: var(--circuit-line);
+  --color-rule-sort: var(--rule-sort);
+  --color-rule-case: var(--rule-case);
+  --color-rule-naming: var(--rule-naming);
+  --color-rule-extract: var(--rule-extract);
+  --color-rule-delimiter: var(--rule-delimiter);
+  --color-rule-wrap: var(--rule-wrap);
+  --color-rule-escape: var(--rule-escape);
+  --color-rule-clean: var(--rule-clean);
+  --color-rule-convert: var(--rule-convert);
+  /* 媒体遮罩（灯箱、画布上的浮动标签）：纯色，透明度交给 bg-overlay/85 这类修饰符，
+     组件内不再散写 bg-black/90、text-white/60 */
+  --color-overlay: var(--overlay);
+  --color-overlay-foreground: var(--overlay-foreground);
+  --color-favorite: var(--favorite);
+  --color-strength-1: var(--strength-1);
+  --color-strength-2: var(--strength-2);
+  --color-strength-3: var(--strength-3);
+  --color-strength-4: var(--strength-4);
+  --color-strength-5: var(--strength-5);
+  /* 悬浮层（dock / 胶囊 / 二级面板）专用语义令牌：亮暗各一套，组件内禁止散写 bg-card/90 */
+  --color-dock: var(--dock-bg);
+  --color-dock-foreground: var(--dock-fg);
+  --color-dock-panel: var(--dock-panel-bg);
+  --color-dock-panel-foreground: var(--dock-fg);
+  --color-dock-border: var(--dock-border);
+  --color-dock-accent: var(--dock-accent);
+  --shadow-dock: var(--dock-shadow);
+  --blur-dock: var(--dock-blur);
+  --shadow-meteor: var(--meteor-glow);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* 全局色板：黑白灰单色主题。主色就是中性色的反相——亮色黑底白字、暗色白底黑字，
+   全站不再引入品牌蓝。中性面一律 0 色相；暗色按 #141414（页面）→ #191919（卡片与浮层）
+   → #242424（悬浮与选中）三档阶梯排布，hover 再亮一档到 #2e2e2e。
+   色相只留给 destructive / warning / favorite / chart / circuit / syntax 这些语义色，
+   组件内不得再写死颜色。
+   .theme-light 与 :root 同一套值：需要把某个子树钉成亮色的导出图（如烧烤购物小票）
+   挂这个类即可，禁止再把令牌值抄一份进组件。 */
+:root,
+.theme-light {
+  color-scheme: light;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.19 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.968 0 0);
+  --secondary-foreground: oklch(0.21 0 0);
+  --muted: oklch(0.968 0 0);
+  --muted-foreground: oklch(0.54 0 0);
+  --accent: oklch(0.955 0 0);
+  --accent-foreground: oklch(0.21 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  /* 提醒黄：只用于「还能用但有风险」的说明条，比 destructive 轻一档 */
+  --warning: oklch(0.66 0.15 76);
+  --warning-foreground: oklch(0.21 0 0);
+  --border: oklch(0.918 0 0);
+  --input: oklch(0.918 0 0);
+  --ring: oklch(0.19 0 0 / 45%);
+  /* 图表色：数值型数据的顺序色阶（数值越大越浅）。蓝在这里只是数据色，与主色无关 */
+  --chart-1: oklch(0.581 0.229 264);
+  --chart-2: oklch(0.65 0.19 262);
+  --chart-3: oklch(0.74 0.15 258);
+  --chart-4: oklch(0.83 0.1 254);
+  --chart-5: oklch(0.91 0.055 250);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.982 0 0);
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: oklch(0.19 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.955 0 0);
+  --sidebar-accent-foreground: oklch(0.21 0 0);
+  --sidebar-border: oklch(0.918 0 0);
+  --sidebar-ring: oklch(0.19 0 0 / 45%);
+  /* 全局 chrome 色：媒体遮罩用纯色，浓淡交给 bg-overlay/85 这类修饰符；
+     favorite 是收藏星标；strength-1..5 是密码强度由红到蓝的五档递进 */
+  --overlay: oklch(0.17 0 0);
+  --overlay-foreground: oklch(0.98 0 0);
+  --favorite: oklch(0.83 0.16 84);
+  --strength-1: oklch(0.577 0.245 27);
+  --strength-2: oklch(0.65 0.19 45);
+  --strength-3: oklch(0.78 0.15 80);
+  --strength-4: oklch(0.62 0.13 190);
+  --strength-5: oklch(0.581 0.229 264);
+  /* Markdown 预览的行内强调色（博客同款：紫色波浪下划线 / 红色粗删除线） */
+  --md-italic-wavy: oklch(0.6 0.15 285);
+  --md-del-line: oklch(0.58 0.21 27);
+  /* 悬浮 dock：半透白底 + 强阴影，亮色下靠阴影而非描边分层 */
+  --dock-bg: oklch(1 0 0 / 82%);
+  --dock-fg: oklch(0.21 0 0);
+  --dock-panel-bg: oklch(1 0 0 / 94%);
+  --dock-border: oklch(0.75 0 0 / 32%);
+  --dock-accent: var(--primary);
+  --dock-shadow: 0 10px 30px -6px oklch(0 0 0 / 18%), 0 2px 6px -2px oklch(0 0 0 / 12%);
+  --dock-blur: 14px;
+  /* 切页流星的光头辉光：亮底上深色光晕会糊成污渍，只留一圈淡晕 */
+  --meteor-glow: 0 0 6px 1px color-mix(in oklch, var(--primary) 30%, transparent);
+  /* app-shell 内容留白：手机底部 dock 占高，桌面/平板左侧 dock 与顶部胶囊占位 */
+  --shell-inset-top: 0rem;
+  --shell-inset-inline-start: 0rem;
+  --shell-inset-bottom: 4.5rem;
+  /* 沉浸页的顶部让位由工具自己的头部承担（见 GifEditor 等），main 不再加 padding：
+     那条 padding 带属于 main，既会在画布的点阵背景上切出一块纯色，
+     又会把落在里面的点击收进 main 的 pointerdown，误触发 dock 折叠 */
+  --shell-immersive-inset-top: 0rem;
+  --shell-immersive-inset-bottom: 4.5rem;
+}
+
+.dark {
+  color-scheme: dark;
+  /* 三档中性灰阶梯：页面 #141414 → 卡片与浮层 #191919 → 悬浮与选中 #242424，
+     hover 再亮一档；色相全为 0，不再带冷调蓝 */
+  --background: oklch(0.191 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.213 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.213 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  /* 暗底上的主按钮是白底黑字：主色就是页面底色的反相 */
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.191 0 0);
+  --secondary: oklch(0.261 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.261 0 0);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.3 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  /* 暗底上的黄要提亮一档，否则压在 card 上读不清 */
+  --warning: oklch(0.81 0.14 82);
+  --warning-foreground: oklch(0.191 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.985 0 0 / 55%);
+  --chart-1: oklch(0.72 0.16 264);
+  --chart-2: oklch(0.65 0.19 262);
+  --chart-3: oklch(0.581 0.229 258);
+  --chart-4: oklch(0.5 0.2 254);
+  --chart-5: oklch(0.42 0.15 250);
+  --sidebar: oklch(0.213 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.985 0 0);
+  --sidebar-primary-foreground: oklch(0.191 0 0);
+  --sidebar-accent: oklch(0.3 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.985 0 0 / 55%);
+  /* 暗色下遮罩要更沉一点才压得住图，星标与强度档同时提一档亮度 */
+  --overlay: oklch(0.13 0 0);
+  --overlay-foreground: oklch(0.98 0 0);
+  --favorite: oklch(0.86 0.15 86);
+  --strength-1: oklch(0.704 0.191 22);
+  --strength-2: oklch(0.76 0.17 45);
+  --strength-3: oklch(0.86 0.15 86);
+  --strength-4: oklch(0.75 0.12 190);
+  --strength-5: oklch(0.72 0.16 264);
+  --md-italic-wavy: oklch(0.75 0.12 285);
+  --md-del-line: oklch(0.7 0.19 25);
+  /* 悬浮外壳压在 #141414 之上，取卡片那一档 #191919；
+     带 alpha 是为了留住毛玻璃，纯不透明会糊成一块板 */
+  --dock-bg: oklch(0.213 0 0 / 88%);
+  --dock-fg: oklch(0.985 0 0);
+  --dock-panel-bg: oklch(0.213 0 0 / 96%);
+  --dock-border: oklch(0.9 0 0 / 14%);
+  --dock-shadow: 0 10px 30px -6px oklch(0 0 0 / 60%), 0 2px 6px -2px oklch(0 0 0 / 45%);
+  /* 暗底上光头是白热灯丝：贴身一圈亮晕 + 外圈散光 */
+  --meteor-glow:
+    0 0 6px 2px color-mix(in oklch, var(--primary) 80%, transparent),
+    0 0 18px 5px color-mix(in oklch, var(--primary) 35%, transparent);
+}
+
+/* 平板与桌面：左侧 dock 与顶部胶囊接管，底部 dock 让位。
+   底部不再留常驻带——备案号只在首页页脚出现 */
+@media (min-width: 768px) {
+  :root {
+    --shell-inset-top: 4.5rem;
+    --shell-inset-inline-start: 5rem;
+    --shell-inset-bottom: 0rem;
+    --shell-immersive-inset-top: 3.5rem;
+    --shell-immersive-inset-bottom: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* AI 生图画布（canvas/ImageCanvas.tsx）：React Flow 自带一套 --xy-* 令牌。
+   注意：库的 style.css 在组件里 import，注入顺序在本文件之后，等特异性的
+   .react-flow {} 会把这些令牌全部盖回出厂默认值（实测 --xy-edge-stroke-default
+   等仍是 #b1b1b7）。要真正改颜色，得用带 .react-flow 前缀的属性规则，见下方。
+   节点的边框底色由节点组件自己用 Tailwind 令牌画，不受这里影响。 */
+.react-flow {
+  --xy-background-color: var(--background);
+  --xy-background-pattern-dots-color-default: var(--border);
+  --xy-edge-stroke-default: var(--border);
+  --xy-edge-stroke-selected-default: var(--primary);
+  --xy-connectionline-stroke-default: var(--primary);
+  --xy-handle-background-color-default: var(--background);
+  --xy-handle-border-color-default: var(--muted-foreground);
+  --xy-selection-background-color-default: color-mix(in oklch, var(--primary) 12%, transparent);
+  --xy-selection-border-default: 1px dashed color-mix(in oklch, var(--primary) 60%, transparent);
+  --xy-node-boxshadow-selected-default: 0 0 0 2px
+    color-mix(in oklch, var(--primary) 45%, transparent);
+  --xy-attribution-background-color-default: var(--muted);
+}
+
+/* 画布光标：React Flow 在 selectionOnDrag 下把空白处设成 cursor:pointer，完全看不出可拖；
+   这里按「空白=抓取手、框选=十字准星、节点=抓取手、节点内可操作控件=pointer/text」重排。
+   必须带 .react-flow 前缀提权：库的 style.css 在组件里导入，注入顺序在本文件之后。 */
+.react-flow .react-flow__pane {
+  cursor: grab;
+}
+.react-flow .react-flow__pane.selection {
+  cursor: crosshair;
+}
+.react-flow .react-flow__pane.dragging {
+  cursor: grabbing;
+}
+.react-flow .react-flow__node.draggable {
+  cursor: grab;
+}
+.react-flow .react-flow__node.draggable.dragging {
+  cursor: grabbing;
+}
+/* 拖拽中的节点单独提层：卡片里是一张解码后的大图，不提层的话每帧都要重新栅格化 */
+.react-flow .react-flow__node.dragging {
+  will-change: transform;
+}
+/* 框选拖拽中的矩形：去掉蓝色填充，只留一圈随主题的实线粗框。
+   必须带 .react-flow 前缀提权，否则被库的 style.css 盖回蓝色默认值 */
+.react-flow .react-flow__selection {
+  background-color: transparent;
+  border: none;
+  border-radius: 12px;
+  outline: 2px solid color-mix(in oklch, var(--foreground) 65%, transparent);
+}
+/* 库自带的「多选持久框」只留透明底与去边框，描边交给 .canvas-selection-frame：
+   1) 它只在框选松手那一刻存在，之后点一下节点、或按住节点开始拖，库都会把
+      nodesSelectionActive 置回 false，把整块框摘掉（选区还在，框没了）；
+   2) 它挂载后会自动 focus，而库的 .react-flow__nodesselection-rect:focus { outline: none }
+      与我们这条同特异性、又后注入，谁给它上色都会被抹掉。
+   元素本身保留：拖动整组、右键菜单与方向键微移仍归它管，只是不再由它上色。 */
+.react-flow .react-flow__nodesselection-rect {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* 多选边框（canvas/ImageCanvas.tsx 的 SelectionFrame）：只认选区状态，选中两个以上节点就
+   一直在，平移缩放与拖拽时实时跟随。描边用 outline 往外画，因为盒子尺寸是内联的屏幕像素，
+   inset 改不动；往外空出的 10px 与 ImageCanvas 里的 SELECTION_PAD 必须保持一致。 */
+.canvas-selection-frame {
+  border-radius: 12px;
+  outline: 2px solid color-mix(in oklch, var(--foreground) 65%, transparent);
+  outline-offset: 10px;
+}
+.react-flow .react-flow__node .react-flow__handle {
+  cursor: crosshair;
+  transition:
+    background-color 120ms,
+    box-shadow 120ms;
+}
+/* 视觉只有 6px 的点，命中范围用 ::after 向外扩 5px；悬停时同一圈用光环保亮，
+   让「能点到的范围」看得见 */
+.react-flow .react-flow__node .react-flow__handle::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 9999px;
+}
+.react-flow .react-flow__node .react-flow__handle:hover {
+  background-color: var(--primary);
+  box-shadow: 0 0 0 5px color-mix(in oklch, var(--primary) 30%, transparent);
+}
+/* 节点内的操作按钮要盖过抓取手，否则看着像整块都能拖。
+   注意只能限定到 button：React Flow 给 handle 也挂了 nodrag 类，宽泛选择器会把
+   把手的 crosshair 一起盖掉。 */
+.react-flow .react-flow__node button.nodrag {
+  cursor: pointer;
+}
+/* 未进入编辑态的文本框整块都是拖拽面，光标跟着抓取手走；只有可写时才要文本光标 */
+.react-flow .react-flow__node textarea[readonly] {
+  cursor: grab;
+}
+.react-flow .react-flow__node textarea:not([readonly]) {
+  cursor: text;
+}
+
+/* 四角的缩放手柄（canvas/nodes/resize-controls.tsx）：鼠标压到哪个角，哪个角的点才现身，
+   否则满屏节点都顶着四个方块太吵。库默认只有 5px，命中不到，这里放大到 12px。 */
+.react-flow .react-flow__node .react-flow__resize-control.handle.canvas-resize-handle {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  opacity: 0;
+  transition:
+    opacity 120ms,
+    box-shadow 120ms;
+}
+/* 命中区用 ::after 向外扩 4px：12px 的点在缩小的画布上太薄，光靠它没人点得到 */
+.react-flow .react-flow__node .react-flow__resize-control.handle.canvas-resize-handle::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+}
+/* 必须带满 .react-flow__resize-control.handle：上一条有 5 个类，
+   少一个就被它的 opacity: 0 压住，表现为手柄永远不显示 */
+.react-flow .react-flow__node .react-flow__resize-control.handle.canvas-resize-handle:hover {
+  opacity: 1;
+  box-shadow: inset 0 0 0 2px color-mix(in oklch, var(--muted-foreground) 70%, transparent);
+}
+
+/* @ 参考图面板从输入框下方划入：只给一个短促的落位感，不抢输入节奏 */
+.canvas-mention-panel {
+  animation: canvas-mention-in 130ms ease-out;
+}
+@keyframes canvas-mention-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 连接热区（canvas/nodes/link-zone.tsx）：贴着侧边中点的一小块活动区，不是整条边。
+   把手外框宽 22px、中心压在侧边中点上，所以 React Flow 算出的连线端点不变；
+   但它左右各探进节点 11px，会把图片与正文的点击吃掉。
+   于是让把手本体不吃事件，只留 ::after 那块区域起手，并把它的内边界正好收在节点边框上。 */
+.react-flow .react-flow__node .react-flow__handle.canvas-link-zone {
+  width: 22px;
+  height: 120px;
+  max-height: 72%;
+  top: 50%;
+  bottom: auto;
+  border: none;
+  background-color: transparent;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.react-flow .react-flow__node .react-flow__handle.canvas-link-zone::after {
+  pointer-events: auto;
+  cursor: crosshair;
+}
+.react-flow .react-flow__node .react-flow__handle-left.canvas-link-zone {
+  left: -11px;
+  --kx: -18px;
+}
+.react-flow .react-flow__node .react-flow__handle-right.canvas-link-zone {
+  right: -11px;
+  left: auto;
+  --kx: 18px;
+}
+/* 内侧 inset 取 +11px（= 把手半宽），正好把热区内边界落在节点边框上 */
+.react-flow .react-flow__node .react-flow__handle-left.canvas-link-zone::after {
+  inset: -10px 11px -10px -30px;
+}
+.react-flow .react-flow__node .react-flow__handle-right.canvas-link-zone::after {
+  inset: -10px -30px -10px 11px;
+}
+.react-flow .react-flow__node .canvas-link-zone:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+/* 加号旋钮：静止时停在侧边外一点，鼠标在活动区内移动时跟手二维游动 */
+.react-flow .react-flow__node .canvas-link-knob {
+  position: absolute;
+  left: calc(50% + var(--kx, 0px));
+  top: var(--ky, 50%);
+  display: flex;
+  width: 20px;
+  height: 20px;
+  translate: -50% -50%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: var(--background);
+  color: var(--muted-foreground);
+  box-shadow:
+    0 0 0 1px var(--border),
+    0 1px 3px rgb(0 0 0 / 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 120ms,
+    box-shadow 120ms,
+    color 120ms;
+}
+.react-flow .react-flow__node:hover .canvas-link-knob,
+.react-flow .react-flow__node.selected .canvas-link-knob {
+  opacity: 1;
+}
+.react-flow .react-flow__node .canvas-link-zone:hover .canvas-link-knob {
+  color: var(--primary);
+  box-shadow:
+    0 0 0 2px var(--primary),
+    0 1px 3px rgb(0 0 0 / 0.3);
+}
+
+/* 可断开的连线（参考图 / 提示词链）：悬停整条描红提示可点，点击即断开；
+   产出边由提示词派生，没有这个类，因此不会给出删除入口 */
+.react-flow .react-flow__edge.canvas-edge-detachable {
+  cursor: pointer;
+}
+.react-flow .react-flow__edge.canvas-edge-detachable:hover .react-flow__edge-path {
+  stroke: var(--destructive);
+}
+
+/* 数字框自带的小箭头由浏览器绘制，吃不进主题还会挤掉数字；需要时统一挂这个类关掉 */
+@utility no-spinner {
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+}
+
+/* 文本对比：删除行铺斜纹、新增行铺实色，两栏一眼分得开 */
+@utility diff-hatch {
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--destructive) 22%, transparent) 0 5px,
+    transparent 5px 10px
+  );
+}
+
+/* 圆角框里的原生滚动条是方的，压到圆角上就像边框被啃掉一块。
+   这层把它收成一条悬浮细条：轨道透明，滑块用 background-clip 让出一圈空隙，
+   于是永远碰不到边框与圆角；hover 才加深，平时几乎不占注意力。
+   Firefox 只认 scrollbar-color，所以那两行是它的等价写法。 */
+@utility inset-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklch, var(--muted-foreground) 35%, transparent) transparent;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: color-mix(in oklch, var(--muted-foreground) 35%, transparent);
+    background-clip: content-box;
+    border: 3px solid transparent;
+    border-radius: 9999px;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: color-mix(in oklch, var(--muted-foreground) 60%, transparent);
+  }
+}
+
+/* 棋盘格：表示"这里什么都没有"的透明底（简历头像裁剪画布用），
+   两种灰度都从 muted-foreground 混出来，亮暗主题各自成立 */
+@utility checkerboard {
+  background-color: color-mix(in oklch, var(--muted-foreground) 10%, var(--background));
+  background-image: repeating-conic-gradient(
+    color-mix(in oklch, var(--muted-foreground) 26%, var(--background)) 0% 25%,
+    transparent 0% 50%
+  );
+  background-size: 20px 20px;
+  background-position: 50%;
+}
+
+/* 页面切换的显影层（components/page-blur-veil.tsx）：浮在内容区上的一层 backdrop-blur，
+   半径从 14px 收到 0，新页面像对焦一样浮现。fill-mode 保持默认 none，动画跑完这层
+   就没有任何 filter 了，不会给内容留下 containing block。 */
+@keyframes page-blur-veil {
+  from {
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
+  to {
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+  }
+}
+
+.page-blur-veil {
+  animation: page-blur-veil 260ms ease-out;
+}
+
+/* 关掉动画即等于直接切页：这层本身是透明的，不做替代性淡入 */
+@media (prefers-reduced-motion: reduce) {
+  .page-blur-veil {
+    animation: none;
+  }
+}
+
+/* highlight.js 极简双主题令牌（配合 TextareaCopyable，随 .dark 自动切换）。
+   注释色直接用 --muted-foreground，删除/新增用 --destructive/--primary，
+   只剩四个语法色需要单独命名；导出用的十六进制镜像见
+   src/tools/text/markdown-editor/export/standalone-html.ts。 */
+:root {
+  --syntax-keyword: oklch(0.55 0.18 292);
+  --syntax-string: oklch(0.5 0.15 155);
+  --syntax-number: oklch(0.6 0.15 55);
+  --syntax-title: oklch(0.56 0.17 264);
+}
+.dark {
+  --syntax-keyword: oklch(0.75 0.14 292);
+  --syntax-string: oklch(0.78 0.14 155);
+  --syntax-number: oklch(0.78 0.13 70);
+  --syntax-title: oklch(0.75 0.13 264);
+}
+.hljs {
+  color: var(--foreground);
+}
+.hljs-comment,
+.hljs-quote {
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag {
+  color: var(--syntax-keyword);
+}
+.hljs-string,
+.hljs-regexp,
+.hljs-addition {
+  color: var(--syntax-string);
+}
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-attr {
+  color: var(--syntax-number);
+}
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-type {
+  color: var(--syntax-title);
+}
+.hljs-deletion {
+  color: var(--destructive);
+}
+
+/* Markdown 编辑器（CodeMirror）配色令牌。
+   选区必须比当前行底色明显：拖选时选区一定落在当前行上，两者同色（都用 --muted/--accent，
+   暗色下都是 oklch(0.269)）就会让选区"看不见，只看到整行高亮"。 */
+:root {
+  --editor-active-line: color-mix(in oklch, var(--foreground) 5%, transparent);
+  --editor-selection: color-mix(in oklch, var(--primary) 35%, transparent);
+}
+
+/* Markdown 编辑器：CodeMirror 语法着色（类名由 use-source-editor 的 HighlightStyle 指定） */
+.cm-heading {
+  font-weight: 600;
+}
+.cm-heading-1 {
+  font-size: 1.15em;
+}
+.cm-heading-2 {
+  font-size: 1.08em;
+}
+.cm-heading-3,
+.cm-heading-4 {
+  font-size: 1.02em;
+}
+.cm-strong {
+  font-weight: 700;
+}
+.cm-em {
+  font-style: italic;
+}
+.cm-del {
+  text-decoration: line-through;
+}
+.cm-link,
+.cm-url {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cm-code {
+  color: var(--syntax-string);
+  font-family: var(--font-mono);
+}
+.cm-quote {
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+.cm-list,
+.cm-hr {
+  color: var(--primary);
+}
+.cm-meta {
+  color: var(--muted-foreground);
+}
+
+/* ---------------------------------------------------------------------------
+ * 简历纸张层（#resume-preview 子树）
+ *
+ * 这一层刻意不接用语义令牌：纸张必须恒为白底黑字（暗色主题下也是），
+ * 且 html2canvas 解析不了 oklch 计算值。因此颜色只允许十六进制与内联 style。
+ * ------------------------------------------------------------------------- */
+@theme {
+  --color-paper-ink: #212529;
+  --color-paper-muted: #4b5563;
+}
+
+/* 每个字族只声明一个 family，用 weight 区间选文件，避免旧版"每档一个字族名"的错配 */
+@font-face {
+  font-family: 'Alibaba PuHuiTi 3.0';
+  src: url('/fonts/AlibabaPuHuiTi-3-55-Regular.ttf') format('truetype');
+  font-weight: 100 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi 3.0';
+  src: url('/fonts/AlibabaPuHuiTi-3-85-Bold.ttf') format('truetype');
+  font-weight: 500 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Normal.ttf') format('truetype');
+  font-weight: 100 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Medium.ttf') format('truetype');
+  font-weight: 500 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('/fonts/NotoSansSC-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('/fonts/NotoSansSC-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('/fonts/NotoSansSC-Bold.otf') format('opentype');
+  font-weight: 600 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Source Han Serif SC';
+  src: url('/fonts/SourceHanSerifSC-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Source Han Serif SC';
+  src: url('/fonts/SourceHanSerifSC-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Source Han Serif SC';
+  src: url('/fonts/SourceHanSerifSC-Bold.otf') format('opentype');
+  font-weight: 600 900;
+  font-display: swap;
+}
+
+.resume-paper,
+.tiptap {
+  /* Tailwind 预置把 img/svg 设成了 block，纸张里与文字同行的图标需要回到行内 */
+  & img,
+  & svg {
+    display: inline-block;
+  }
+
+  /* 富文本（Tiptap 产出的裸 ul/ol）在预置下会丢掉圆点与缩进，这里按层级补回 */
+  & ul {
+    list-style: disc outside;
+    padding-left: 1.3em;
+    margin: 0.4em 0;
+  }
+  & ol {
+    list-style: decimal outside;
+    padding-left: 1.3em;
+    margin: 0.4em 0;
+  }
+  & ul ul {
+    list-style-type: circle;
+  }
+  & ul ul ul {
+    list-style-type: square;
+  }
+  & ol ol {
+    list-style-type: lower-alpha;
+  }
+  & ol ol ol {
+    list-style-type: lower-roman;
+  }
+  & li {
+    margin: 0.25em 0;
+  }
+  & p {
+    margin: 0.35em 0;
+  }
+  & blockquote {
+    border-left: 2px solid #d1d5db;
+    padding-left: 0.9em;
+    margin: 0.5em 0;
+    color: #4b5563;
+  }
+  & hr {
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+    margin: 0.8em 0;
+  }
+  & code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.92em;
+    background: #f3f4f6;
+    border-radius: 3px;
+    padding: 0 0.25em;
+  }
+  & a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+/* Tiptap 空文档时的占位文案（data-placeholder 由 editorProps 写入） */
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+  color: var(--muted-foreground);
+}
+
+/* AI 语法检查高亮：改在 #resume-preview 的 DOM 上，导出前由 export/* 还原成纯文本 */
+.grammar-error {
+  background: transparent;
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.grammar-error-spelling {
+  text-decoration-color: var(--destructive);
+}
+.grammar-error-punctuation,
+.grammar-error-grammar {
+  text-decoration-color: var(--warning);
+}
+.grammar-error:hover {
+  background-color: color-mix(in oklch, var(--destructive) 14%, transparent);
+}
+.grammar-error-active {
+  animation: grammar-flash 2s ease-out;
+}
+@keyframes grammar-flash {
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  30% {
+    background-color: color-mix(in oklch, var(--primary) 28%, transparent);
+  }
+}
+.grammar-error-text {
+  text-decoration-line: line-through;
+  text-decoration-color: var(--destructive);
+}
+
+/* ---------------------------------------------------------------------------
+   今日运势抽签（tools/life/fortune-draw）
+   档位色为语义令牌（吉=中国红、平=金色），凶复用 muted-foreground；
+   动效只负责几何与透明度，颜色一律引用令牌，亮暗主题自动生效。
+--------------------------------------------------------------------------- */
+:root {
+  --fortune-good: oklch(0.58 0.22 27);
+  --fortune-normal: oklch(0.6 0.14 70);
+}
+.dark {
+  --fortune-good: oklch(0.7 0.19 24);
+  --fortune-normal: oklch(0.8 0.13 85);
+}
+
+/* ---------------------------------------------------------------------------
+   文本格式化（tools/text/text-formatter）的快捷规则分组色
+   9 个色相在色环上尽量拉开，暗色主题提高明度保持同一辨识度；
+   按钮只用 `bg-rule-<组>/10` 这类透明度写法，不另写死颜色。
+--------------------------------------------------------------------------- */
+:root {
+  --rule-sort: oklch(0.6 0.13 155);
+  --rule-case: oklch(0.58 0.14 255);
+  --rule-naming: oklch(0.58 0.16 300);
+  --rule-extract: oklch(0.65 0.13 70);
+  --rule-delimiter: oklch(0.62 0.11 195);
+  --rule-wrap: oklch(0.6 0.16 330);
+  --rule-escape: oklch(0.58 0.15 265);
+  --rule-clean: oklch(0.58 0.17 20);
+  --rule-convert: oklch(0.62 0.13 45);
+}
+.dark {
+  --rule-sort: oklch(0.72 0.13 155);
+  --rule-case: oklch(0.72 0.13 255);
+  --rule-naming: oklch(0.74 0.14 300);
+  --rule-extract: oklch(0.78 0.12 70);
+  --rule-delimiter: oklch(0.75 0.1 195);
+  --rule-wrap: oklch(0.74 0.14 330);
+  --rule-escape: oklch(0.73 0.14 265);
+  --rule-clean: oklch(0.72 0.15 20);
+  --rule-convert: oklch(0.76 0.12 45);
+}
+
+/* 签筒：静置时轻摆，抽签时先快摇、再猛抖、最后缓出，像真在晃签筒 */
+.fortune-tube {
+  transform-origin: 50% 92%;
+}
+.fortune-tube--idle {
+  animation: fortune-sway 3.2s ease-in-out infinite;
+}
+.fortune-tube--shaking {
+  animation: fortune-shake 1.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+@keyframes fortune-sway {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+@keyframes fortune-shake {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  10% {
+    transform: rotate(-5deg) translateY(-2px);
+  }
+  20% {
+    transform: rotate(5deg) translateY(0);
+  }
+  30% {
+    transform: rotate(-8deg) translateY(-4px);
+  }
+  40% {
+    transform: rotate(9deg) translateY(-1px);
+  }
+  50% {
+    transform: rotate(-10deg) translateY(-6px);
+  }
+  60% {
+    transform: rotate(10deg) translateY(-2px);
+  }
+  70% {
+    transform: rotate(-7deg) translateY(-4px);
+  }
+  80% {
+    transform: rotate(5deg) translateY(-1px);
+  }
+  90% {
+    transform: rotate(-3deg) translateY(0);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+}
+
+/* 签条：rotate 由组件内联样式给出（每根角度不同），动画只动 translate/opacity
+   以免覆盖。--rattle 控制各签抖动幅度，错峰延迟在组件内联设置 */
+.fortune-tube--shaking .fortune-stick {
+  animation: fortune-stick-rattle 0.16s ease-in-out infinite;
+}
+.fortune-stick--chosen {
+  animation: fortune-stick-fly 0.55s cubic-bezier(0.5, 0, 0.8, 0.4) forwards;
+}
+@keyframes fortune-stick-rattle {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 calc(var(--rattle, 7px) * -1);
+  }
+}
+@keyframes fortune-stick-fly {
+  0% {
+    translate: 0 0;
+    rotate: 0deg;
+    opacity: 1;
+  }
+  55% {
+    translate: 8px -130px;
+    rotate: 12deg;
+    opacity: 1;
+  }
+  100% {
+    translate: 20px -190px;
+    rotate: 24deg;
+    opacity: 0;
+  }
+}
+
+/* 摇签时筒口喷出的小粒子 */
+.fortune-puff {
+  animation: fortune-puff 0.6s ease-out infinite;
+}
+@keyframes fortune-puff {
+  0% {
+    opacity: 0;
+    translate: 0 0;
+    scale: 0.5;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    translate: var(--puff-x, 6px) -26px;
+    scale: 1.2;
+  }
+}
+
+/* 结果卡：中签条飞出后整张卡直接淡入上浮，不做翻面 —— 翻面要依赖 preserve-3d，
+   而带 opacity 动画的 3D 容器会被浏览器压平，正反两面会同时不绘制。 */
+.fortune-card {
+  animation: fortune-card-in 0.45s ease-out both;
+}
+@keyframes fortune-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 图片转拼豆：有效范围上的豆格线（background-size 由组件按当前格数内联给出） */
+.bead-grid-lines {
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      color-mix(in srgb, var(--foreground) 45%, transparent) 0 1px,
+      transparent 1px 100%
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--foreground) 45%, transparent) 0 1px,
+      transparent 1px 100%
+    );
+}
+
+/* 每 10 格一条分界粗线，对应实体豆板的拼缝 */
+.bead-grid-rulers {
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      color-mix(in srgb, var(--foreground) 80%, transparent) 0 2px,
+      transparent 2px 100%
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--foreground) 80%, transparent) 0 2px,
+      transparent 2px 100%
+    );
+}
+
+/* 吉签标题周围的浮动光点 */
+.fortune-sparkle {
+  animation: fortune-sparkle 1.8s ease-in-out infinite;
+}
+@keyframes fortune-sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fortune-tube--idle,
+  .fortune-tube--shaking,
+  .fortune-tube--shaking .fortune-stick,
+  .fortune-stick--chosen,
+  .fortune-puff,
+  .fortune-card,
+  .fortune-sparkle {
+    animation-duration: 0.01s;
+    animation-iteration-count: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   烧烤规划器（tools/life/barbecue-planner）
+   切换结果板块时给一点位移提示，避免内容凭空换页。
+   -------------------------------------------------------------------------- */
+@keyframes bbq-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.bbq-panel-in {
+  animation: bbq-panel-in 200ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bbq-panel-in {
+    animation-duration: 0.01s;
+    animation-iteration-count: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   首页电路板（components/home/circuit）
+   走线本身是一根中性导管，九条同色——颜色只属于跑在里面的流星，
+   每个分类各占一个色相（--circuit-N），光束与芯片从这套令牌取色；
+   核心芯片不另配色，直接吃 --primary，让黑白灰的主色当主板的主色。
+   分类色相仍要求在色环上彼此分得开：--circuit-5 保持在 222，
+   免得和相邻的分类撞色，看不出"这是某一个分类"。
+   -------------------------------------------------------------------------- */
+:root {
+  --circuit-board: oklch(0.985 0 0);
+  --circuit-line: oklch(0.9 0 0);
+  --circuit-core: var(--primary);
+  --circuit-1: oklch(0.55 0.13 152);
+  --circuit-2: oklch(0.55 0.16 318);
+  --circuit-3: oklch(0.6 0.15 30);
+  --circuit-4: oklch(0.58 0.13 58);
+  --circuit-5: oklch(0.53 0.16 222);
+  --circuit-6: oklch(0.56 0.11 192);
+  --circuit-7: oklch(0.54 0.15 286);
+  --circuit-8: oklch(0.55 0.13 100);
+  --circuit-9: oklch(0.55 0.17 8);
+}
+.dark {
+  --circuit-board: oklch(0.213 0 0);
+  --circuit-line: oklch(0.33 0 0);
+  --circuit-core: var(--primary);
+  --circuit-1: oklch(0.76 0.13 152);
+  --circuit-2: oklch(0.74 0.14 318);
+  --circuit-3: oklch(0.77 0.13 30);
+  --circuit-4: oklch(0.8 0.12 58);
+  --circuit-5: oklch(0.75 0.13 222);
+  --circuit-6: oklch(0.79 0.1 192);
+  --circuit-7: oklch(0.75 0.13 286);
+  --circuit-8: oklch(0.78 0.12 100);
+  --circuit-9: oklch(0.74 0.15 8);
+}
+
+/* 流星光：一束 dash 长度固定的亮线，配一个跟着光头跑的 userSpaceOnUse 渐变
+   （尾端透明 → 头部最亮）。渐变两端的坐标由 CircuitTraces 的 rAF 循环逐帧写进
+   <linearGradient>，所以这里没有任何关键帧，只管配色。
+   为什么不用 CSS 关键帧推进：关键帧只能改 dashoffset，改不动渐变两端，
+   于是拖尾不沿路径方向渐隐，看着就是一截等高不透明的亮线——那正是"光悬在线外"的成因。
+   --circuit-trace-color 写在 <linearGradient> 自己的 style 上，
+   本规则里的 var 才能在同一个元素上取到它。
+   亮头分主题：暗色下混白当灯丝；亮色下白热头会糊成一片，直接回落到分类本色，
+   靠与 30% 导管之间的浓度差读亮度。 */
+.circuit-flow-grad {
+  --circuit-flow-tip: var(--circuit-trace-color);
+}
+.dark .circuit-flow-grad {
+  --circuit-flow-tip: var(--foreground);
+}
+.circuit-flow-tail {
+  stop-color: var(--circuit-trace-color);
+  stop-opacity: 0;
+}
+.circuit-flow-body {
+  stop-color: var(--circuit-trace-color);
+  stop-opacity: 0.55;
+}
+.circuit-flow-head {
+  stop-color: var(--circuit-flow-tip);
+  stop-opacity: 1;
+}
+
+/* 充电背光：光头抵达芯片在周期的 20.3% 处（FLOW_TRAVEL / FLOW_CYCLE = 1.3 / 6.4），
+   背光从这一刻快速充亮再拖一段余晖，像被充了一次电；
+   相位复用同一条走线的 duration/delay，与 rAF 用的是同一条公式，天然同相 */
+@keyframes circuit-chip-charge {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  24% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0.3;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.chip-charge {
+  opacity: 0;
+  animation: circuit-chip-charge var(--circuit-flow-duration, 3s) linear infinite;
+  animation-delay: var(--circuit-flow-delay, 0s);
+  background: radial-gradient(
+    115% 115% at 50% 50%,
+    transparent 52%,
+    color-mix(in oklch, currentColor 16%, transparent) 100%
+  );
+  box-shadow:
+    inset 0 0 1.4cqw 0.15cqw color-mix(in oklch, currentColor 50%, transparent),
+    inset 0 0 4.5cqw 1.2cqw color-mix(in oklch, currentColor 18%, transparent);
+}
+
+/* 四角支架：描边就是本颗的分类色（currentColor），再压一束与展开卡片同款的辉光，
+   芯片落在版图上就该是"已经通上电"的样子，而不是四段灰色折角 */
+.chip-corner {
+  filter: drop-shadow(0 0 6px color-mix(in oklch, currentColor 80%, transparent));
+}
+
+/* 芯片静置时的极轻浮动：错开的相位由内联 --circuit-drift-delay 给出，
+   幅度只有 2px，是「板子活着」的暗示而不是干扰阅读的晃动 */
+@keyframes circuit-chip-drift {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -2px;
+  }
+}
+.circuit-chip-drift {
+  animation: circuit-chip-drift 6s ease-in-out infinite;
+  animation-delay: var(--circuit-drift-delay, 0s);
+}
+
+/* 入场：芯片与核心「气泡弹出」。缩放一律用独立的 scale 属性而不是 transform——
+   定位用的 translate(-50%,-50%) 与 Motion 的 hover scale 各占一个属性，互不覆盖，
+   缩到 0 时也就不会朝被缩放过的锚点塌下去。回弹写在关键帧的百分位里。 */
+@keyframes circuit-pop-in {
+  0% {
+    scale: 0;
+    opacity: 0;
+  }
+  55% {
+    scale: 1.12;
+    opacity: 1;
+  }
+  78% {
+    scale: 0.96;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+.circuit-pop-in {
+  animation: circuit-pop-in 0.45s cubic-bezier(0.33, 1, 0.68, 1) both;
+  animation-delay: var(--circuit-in-delay, 0s);
+}
+
+/* 走线从核心画向芯片：pathLength=1 把线长归一，dasharray 1 即「整条一段」，
+   偏移从 1 推到 0 就是把这段亮线从起点推出来。延迟期间靠 fill:both 保持空白 */
+@keyframes circuit-trace-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.circuit-trace-draw {
+  stroke-dasharray: 1;
+  animation: circuit-trace-draw 0.5s ease-out both;
+  animation-delay: var(--circuit-in-delay, 0s);
+}
+
+@keyframes circuit-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.circuit-fade-in {
+  animation: circuit-fade-in 0.6s ease-out both;
+  animation-delay: var(--circuit-in-delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip-charge,
+  .circuit-chip-drift,
+  .circuit-pop-in,
+  .circuit-trace-draw,
+  .circuit-fade-in {
+    animation: none;
+  }
+  /* 入场动画一停，dash 图案本身也得撤掉，否则走线只剩半截 */
+  .circuit-trace-draw {
+    stroke-dasharray: none;
+  }
+  /* 流星靠 rAF 逐帧写 opacity，循环一停就没人碰它：光束组挂载时本身就是 0，
+     静止态只剩导管本体。这条是 JS 整页没跑起来时的兜底 */
+  .circuit-comet {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "pageTitle": "{{site}} — Free Online Tools for Developers",
+  "metaDescription": "Free online toolbox: hashing, encoding, JSON/YAML conversion, UUID and regex testing — 50+ developer utilities that run entirely in your browser.",
+  "title": "{{site}}",
+  "subtitle": "Free online toolbox: 50+ utilities for crypto, conversion, encoding, web and text work. Apart from IP lookup and a few opt-in networked features, everything runs locally in your browser.",
+  "circuit": {
+    "ariaLabel": "Tool category circuit board — pick any chip to open the tools in that category",
+    "coreCount": "{{total}} tools",
+    "toolCount": "{{total}} tools",
+    "hint": "Click any chip to unfold every tool in that category",
+    "close": "Collapse panel"
+  }
+}
