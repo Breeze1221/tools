@@ -223,6 +223,63 @@ export function derBitStringBytes(element: DerElement): Uint8Array {
   return new Uint8Array(element.content.subarray(1))
 }
 
+/** INTEGER 内容 → 非负整数（证书版本号这类小整数） */
+export function derIntegerValue(element: DerElement): number {
+  let value = 0
+  for (const byte of derIntegerMagnitude(element)) {
+    value = value * 0x100 + byte
+  }
+  return value
+}
+
+/**
+ * 解码常见的 ASN.1 字符串类型（DirectoryString 及其变体）。
+ * BMPString / UniversalString 手工按大端拼接：TextDecoder 在浏览器里不认 utf-32be。
+ */
+export function derStringText(element: DerElement): string {
+  const { tag, content } = element
+  switch (tag) {
+    case 0x0c:
+      return new TextDecoder('utf-8').decode(content)
+    case 0x12:
+    case 0x13:
+    case 0x14:
+    case 0x16:
+    case 0x1a:
+    case 0x1b:
+      return new TextDecoder('latin1').decode(content)
+    case 0x1e: {
+      if (content.length % 2 !== 0) {
+        throw new Error('DER: BMPString length must be a multiple of 2')
+      }
+      let text = ''
+      for (let i = 0; i < content.length; i += 2) {
+        text += String.fromCharCode((content[i] << 8) | content[i + 1])
+      }
+      return text
+    }
+    case 0x1c: {
+      if (content.length % 4 !== 0) {
+        throw new Error('DER: UniversalString length must be a multiple of 4')
+      }
+      let text = ''
+      for (let i = 0; i < content.length; i += 4) {
+        text += String.fromCodePoint(
+          ((content[i] << 24) >>> 0) +
+            (content[i + 1] << 16) +
+            (content[i + 2] << 8) +
+            content[i + 3],
+        )
+      }
+      return text
+    }
+    default:
+      throw new Error(
+        `DER: tag 0x${tag.toString(16).padStart(2, '0')} is not a supported ASN.1 string type`,
+      )
+  }
+}
+
 export function derObjectIdentifierText(element: DerElement): string {
   const values: number[] = []
   let value = 0
